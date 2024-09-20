@@ -110,6 +110,18 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  fonts:
+    - family: Ubuntu Mono
+      fonts:
+        - asset: lib/ui/res/font/UbuntuMono-Bold.ttf
+          weight: 700
+        - asset: lib/ui/res/font/UbuntuMono-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: lib/ui/res/font/UbuntuMono-Italic.ttf
+          style: italic
+        - asset: lib/ui/res/font/UbuntuMono-Regular.ttf
+          weight: 400
 
 flutter_intl:
   enabled: true
