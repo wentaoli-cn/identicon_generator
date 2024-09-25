@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator")
+        "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
+        "homeExplanation": MessageLookupByLibrary.simpleMessage(
+            "An identicon is a visual representation of a hash value."),
+        "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
+            "Do not use sensitive information, your identicon may reveal it."),
+        "homePromptsHint": MessageLookupByLibrary.simpleMessage(
+            "Please enter your prompts here.")
       };
 }

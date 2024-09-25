@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:identicon_generator/ui/res/color.dart';
 import 'package:identicon_generator/ui/res/route.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
+import 'package:identicon_generator/ui/res/style.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
+    _initApp();
+
     return MaterialApp.router(
       routerConfig: router,
+      theme: appTheme,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -27,5 +33,17 @@ class App extends StatelessWidget {
         return supportedLocales.first;
       },
     );
+  }
+
+  void _initApp() {
+    // Initialize the system bar.
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colorz.transparent,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.light,
+      ),
+    );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   }
 }

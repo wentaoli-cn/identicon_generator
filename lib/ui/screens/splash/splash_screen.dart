@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:identicon_generator/ui/res/style.dart';
 import 'package:identicon_generator/ui/screens/splash/bloc/splash_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/res/route.dart';
 import 'package:identicon_generator/ui/res/anim/animation.dart';
-import 'package:identicon_generator/ui/res/font/font.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -27,11 +27,7 @@ class SplashScreen extends StatelessWidget {
                   Lottie.asset(Animationz.splash.path, width: 100.0),
                   Text(
                     S.current.appName,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: Fontz.ubuntuMono.name,
-                    ),
+                    style: TextStylez.bold20,
                   ),
                 ],
               ),

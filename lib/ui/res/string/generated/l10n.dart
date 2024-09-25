@@ -59,6 +59,36 @@ class S {
       args: [],
     );
   }
+
+  /// `An identicon is a visual representation of a hash value.`
+  String get homeExplanation {
+    return Intl.message(
+      'An identicon is a visual representation of a hash value.',
+      name: 'homeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your prompts here.`
+  String get homePromptsHint {
+    return Intl.message(
+      'Please enter your prompts here.',
+      name: 'homePromptsHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do not use sensitive information, your identicon may reveal it.`
+  String get homePromptsHelper {
+    return Intl.message(
+      'Do not use sensitive information, your identicon may reveal it.',
+      name: 'homePromptsHelper',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
