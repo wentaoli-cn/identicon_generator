@@ -89,6 +89,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Hash function used to generate`
+  String get homeHashFunctionHelper {
+    return Intl.message(
+      'Hash function used to generate',
+      name: 'homeHashFunctionHelper',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

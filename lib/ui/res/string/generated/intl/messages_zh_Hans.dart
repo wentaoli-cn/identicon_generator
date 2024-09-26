@@ -24,7 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
         "homeExplanation":
-            MessageLookupByLibrary.simpleMessage("Identicon 是哈希值的可视化表示。"),
+            MessageLookupByLibrary.simpleMessage("Identicon 是哈希值的一种可视化表示。"),
+        "homeHashFunctionHelper":
+            MessageLookupByLibrary.simpleMessage("用于生成的哈希算法"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "请勿使用敏感信息, 你的 Identicon 可能会泄露它。"),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage("请在此处输入你的信息。")

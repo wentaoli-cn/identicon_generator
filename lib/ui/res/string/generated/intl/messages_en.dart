@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
         "homeExplanation": MessageLookupByLibrary.simpleMessage(
             "An identicon is a visual representation of a hash value."),
+        "homeHashFunctionHelper": MessageLookupByLibrary.simpleMessage(
+            "Hash function used to generate"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "Do not use sensitive information, your identicon may reveal it."),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage(

@@ -3,6 +3,12 @@ import 'color.dart';
 import 'font/font.dart';
 
 class TextStylez {
+  static const regular12 = TextStyle(
+    color: Colorz.white,
+    fontSize: 12.0,
+    fontWeight: FontWeight.w400,
+  );
+
   static const regular14 = TextStyle(
     color: Colorz.white,
     fontSize: 14.0,

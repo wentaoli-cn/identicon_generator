@@ -14,12 +14,9 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => BlocProvider(
-        create: (_) => HomeBloc(),
-        child: const Scaffold(
-          appBar: _AppBar(),
-          body: _Body(),
-        ),
+  Widget build(BuildContext context) => const Scaffold(
+        appBar: _AppBar(),
+        body: _Body(),
       );
 }
 
@@ -53,6 +50,7 @@ class _Body extends StatelessWidget {
             SizedBox(height: 4.0),
             _PromptsTextField(),
             SizedBox(height: 8.0),
+            _HashFunctionPicker(),
             // TODO: Implement it.
           ],
         ),
