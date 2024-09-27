@@ -186,11 +186,9 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                                   isSelected: value == selectedHashFunction,
                                   onTap: () {
                                     _dismissMenu();
-                                    context
-                                        .read<HomeBloc>()
-                                        .add(HomeHashFunctionChanged(
-                                          hashFunction: value,
-                                        ));
+                                    context.read<HomeBloc>().add(
+                                        HomeHashFunctionChanged(
+                                            hashFunction: value));
                                   },
                                 ),
                               )
