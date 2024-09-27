@@ -20,11 +20,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(value) => "${value} × ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
         "homeExplanation": MessageLookupByLibrary.simpleMessage(
             "An identicon is a visual representation of a hash value."),
+        "homeGridTypeDescription": m0,
+        "homeGridTypeHelper":
+            MessageLookupByLibrary.simpleMessage("Grid type used to generate"),
         "homeHashFunctionHelper": MessageLookupByLibrary.simpleMessage(
             "Hash function used to generate"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(

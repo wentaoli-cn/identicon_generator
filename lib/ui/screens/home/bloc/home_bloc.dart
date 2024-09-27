@@ -9,6 +9,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(const HomeState()) {
     on<HomePromptsChanged>(_onPromptsChanged);
     on<HomeHashFunctionChanged>(_onHashFunctionChanged);
+    on<HomeGridTypeChanged>(_onGridTypeChanged);
   }
 
   Future<void> _onPromptsChanged(
@@ -29,5 +30,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(hashFunction: event.hashFunction));
+  }
+
+  Future<void> _onGridTypeChanged(
+    HomeGridTypeChanged event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(state.copyWith(gridType: event.gridType));
   }
 }

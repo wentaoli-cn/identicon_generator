@@ -9,3 +9,71 @@ class _Explanation extends StatelessWidget {
         style: TextStylez.regular16,
       );
 }
+
+class _Slider extends StatelessWidget {
+  const _Slider({
+    required this.title,
+    required this.value,
+    required this.description,
+    required this.min,
+    required this.max,
+    this.onChange,
+  });
+
+  final String title;
+  final double value;
+  final String description;
+  final double min;
+  final double max;
+  final ValueChanged<double>? onChange;
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
+          ),
+          Slider(
+            value: value,
+            onChanged: onChange,
+            min: min,
+            max: max,
+            activeColor: Colorz.white,
+            inactiveColor: Colorz.darkGray,
+            overlayColor: const WidgetStatePropertyAll(Colorz.transparent),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                description,
+                style: TextStylez.regular16,
+              ),
+            ],
+          ),
+        ],
+      );
+}
+
+class _GridTypeSlider extends StatelessWidget {
+  const _GridTypeSlider();
+
+  @override
+  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) => _Slider(
+          title: S.current.homeGridTypeHelper,
+          value: state.gridType,
+          description: S.current.homeGridTypeDescription(state.gridType),
+          min: HomeState.gridTypeMin,
+          max: HomeState.gridTypeMax,
+          onChange: (value) {
+            context
+                .read<HomeBloc>()
+                .add(HomeGridTypeChanged(gridType: value.roundToDouble()));
+          },
+        ),
+      );
+}

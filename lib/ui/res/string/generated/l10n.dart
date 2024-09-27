@@ -99,6 +99,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Grid type used to generate`
+  String get homeGridTypeHelper {
+    return Intl.message(
+      'Grid type used to generate',
+      name: 'homeGridTypeHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} × {value}`
+  String homeGridTypeDescription(Object value) {
+    return Intl.message(
+      '$value × $value',
+      name: 'homeGridTypeDescription',
+      desc: '',
+      args: [value],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

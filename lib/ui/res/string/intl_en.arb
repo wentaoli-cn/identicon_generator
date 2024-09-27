@@ -4,5 +4,7 @@
   "homeExplanation": "An identicon is a visual representation of a hash value.",
   "homePromptsHint": "Please enter your prompts here.",
   "homePromptsHelper": "Do not use sensitive information, your identicon may reveal it.",
-  "homeHashFunctionHelper": "Hash function used to generate"
+  "homeHashFunctionHelper": "Hash function used to generate",
+  "homeGridTypeHelper": "Grid type used to generate",
+  "homeGridTypeDescription": "{value} × {value}"
 }

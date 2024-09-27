@@ -20,11 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh_Hans';
 
+  static String m0(value) => "${value} × ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
         "homeExplanation":
             MessageLookupByLibrary.simpleMessage("Identicon 是哈希值的一种可视化表示。"),
+        "homeGridTypeDescription": m0,
+        "homeGridTypeHelper": MessageLookupByLibrary.simpleMessage("用于生成的网格类型"),
         "homeHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("用于生成的哈希算法"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(

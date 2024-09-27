@@ -13,3 +13,9 @@ final class HomeHashFunctionChanged extends HomeEvent {
 
   final SupportedHashFunction hashFunction;
 }
+
+final class HomeGridTypeChanged extends HomeEvent {
+  HomeGridTypeChanged({required this.gridType});
+
+  final double gridType;
+}

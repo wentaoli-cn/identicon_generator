@@ -51,6 +51,8 @@ class _Body extends StatelessWidget {
             _PromptsTextField(),
             SizedBox(height: 8.0),
             _HashFunctionPicker(),
+            SizedBox(height: 8.0),
+            _GridTypeSlider(),
             // TODO: Implement it.
           ],
         ),
