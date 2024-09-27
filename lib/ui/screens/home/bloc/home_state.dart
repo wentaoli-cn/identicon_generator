@@ -5,32 +5,41 @@ final class HomeState extends Equatable {
     this.prompts = '',
     this.hashFunction = SupportedHashFunction.md5,
     this.gridType = defaultGridType,
+    this.iconSize = defaultIconSize,
   });
 
   static const gridTypeMin = 3.0;
   static const defaultGridType = 5.0;
   static const gridTypeMax = 12.0;
+  static const iconSizeBase = 2.0;
+  static const iconSizeMin = 32.0;
+  static const defaultIconSize = 128.0;
+  static const iconSizeMax = 512.0;
 
   final String prompts;
   final SupportedHashFunction hashFunction;
   final double gridType;
+  final double iconSize;
 
   @override
   List<Object?> get props => [
         prompts,
         hashFunction,
         gridType,
+        iconSize,
       ];
 
   HomeState copyWith({
     String? prompts,
     SupportedHashFunction? hashFunction,
     double? gridType,
+    double? iconSize,
   }) =>
       HomeState(
         prompts: prompts ?? this.prompts,
         hashFunction: hashFunction ?? this.hashFunction,
         gridType: gridType ?? this.gridType,
+        iconSize: iconSize ?? this.iconSize,
       );
 }
 

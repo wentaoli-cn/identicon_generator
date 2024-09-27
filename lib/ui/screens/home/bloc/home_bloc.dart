@@ -10,6 +10,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomePromptsChanged>(_onPromptsChanged);
     on<HomeHashFunctionChanged>(_onHashFunctionChanged);
     on<HomeGridTypeChanged>(_onGridTypeChanged);
+    on<HomeIconSizeChanged>(_onIconSizeChanged);
   }
 
   Future<void> _onPromptsChanged(
@@ -37,5 +38,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(gridType: event.gridType));
+  }
+
+  Future<void> _onIconSizeChanged(
+    HomeIconSizeChanged event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(state.copyWith(iconSize: event.iconSize));
   }
 }

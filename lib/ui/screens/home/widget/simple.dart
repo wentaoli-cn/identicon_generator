@@ -77,3 +77,25 @@ class _GridTypeSlider extends StatelessWidget {
         ),
       );
 }
+
+class _IconSizeSlider extends StatelessWidget {
+  const _IconSizeSlider();
+
+  @override
+  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) => _Slider(
+          title: S.current.homeIconSizeHelper,
+          value: state.iconSize,
+          description: S.current.homeIconSizeDescription(state.iconSize),
+          min: HomeState.iconSizeMin,
+          max: HomeState.iconSizeMax,
+          onChange: (value) {
+            final exponent =
+                (log(value) / log(HomeState.iconSizeBase)).roundToDouble();
+            final size = pow(HomeState.iconSizeBase, exponent).toDouble();
+
+            context.read<HomeBloc>().add(HomeIconSizeChanged(iconSize: size));
+          },
+        ),
+      );
+}

@@ -6,5 +6,7 @@
   "homePromptsHelper": "请勿使用敏感信息, 你的 Identicon 可能会泄露它。",
   "homeHashFunctionHelper": "用于生成的哈希算法",
   "homeGridTypeHelper": "用于生成的网格类型",
-  "homeGridTypeDescription": "{value} × {value}"
+  "homeGridTypeDescription": "{value} × {value}",
+  "homeIconSizeHelper": "用于生成的图标大小",
+  "homeIconSizeDescription": "{value} px"
 }

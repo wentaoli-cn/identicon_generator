@@ -19,3 +19,9 @@ final class HomeGridTypeChanged extends HomeEvent {
 
   final double gridType;
 }
+
+final class HomeIconSizeChanged extends HomeEvent {
+  HomeIconSizeChanged({required this.iconSize});
+
+  final double iconSize;
+}

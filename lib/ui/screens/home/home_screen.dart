@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:identicon_generator/ui/res/color.dart';
@@ -53,6 +55,8 @@ class _Body extends StatelessWidget {
             _HashFunctionPicker(),
             SizedBox(height: 8.0),
             _GridTypeSlider(),
+            SizedBox(height: 4.0),
+            _IconSizeSlider(),
             // TODO: Implement it.
           ],
         ),

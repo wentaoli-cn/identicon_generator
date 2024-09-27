@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(value) => "${value} × ${value}";
 
+  static String m1(value) => "${value} px";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
@@ -31,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeGridTypeHelper": MessageLookupByLibrary.simpleMessage("用于生成的网格类型"),
         "homeHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("用于生成的哈希算法"),
+        "homeIconSizeDescription": m1,
+        "homeIconSizeHelper": MessageLookupByLibrary.simpleMessage("用于生成的图标大小"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "请勿使用敏感信息, 你的 Identicon 可能会泄露它。"),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage("请在此处输入你的信息。")

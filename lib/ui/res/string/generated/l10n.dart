@@ -119,6 +119,26 @@ class S {
       args: [value],
     );
   }
+
+  /// `Icon size used to generate`
+  String get homeIconSizeHelper {
+    return Intl.message(
+      'Icon size used to generate',
+      name: 'homeIconSizeHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} px`
+  String homeIconSizeDescription(Object value) {
+    return Intl.message(
+      '$value px',
+      name: 'homeIconSizeDescription',
+      desc: '',
+      args: [value],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

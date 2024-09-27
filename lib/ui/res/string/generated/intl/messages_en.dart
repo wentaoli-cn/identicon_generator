@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(value) => "${value} × ${value}";
 
+  static String m1(value) => "${value} px";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
@@ -32,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Grid type used to generate"),
         "homeHashFunctionHelper": MessageLookupByLibrary.simpleMessage(
             "Hash function used to generate"),
+        "homeIconSizeDescription": m1,
+        "homeIconSizeHelper":
+            MessageLookupByLibrary.simpleMessage("Icon size used to generate"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "Do not use sensitive information, your identicon may reveal it."),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage(
