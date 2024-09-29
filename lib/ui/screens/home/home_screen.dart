@@ -44,21 +44,24 @@ class _Body extends StatelessWidget {
   const _Body();
 
   @override
-  Widget build(BuildContext context) => const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.0),
-        child: Column(
-          children: [
-            _Explanation(),
-            SizedBox(height: 4.0),
-            _PromptsTextField(),
-            SizedBox(height: 8.0),
-            _HashFunctionPicker(),
-            SizedBox(height: 8.0),
-            _GridTypeSlider(),
-            SizedBox(height: 4.0),
-            _IconSizeSlider(),
-            // TODO: Implement it.
-          ],
+  Widget build(BuildContext context) => ListView(
+        padding: const EdgeInsets.only(
+          left: 12.0,
+          right: 12.0,
+          bottom: 12.0,
         ),
+        shrinkWrap: true,
+        children: const [
+          _Explanation(),
+          SizedBox(height: 4.0),
+          _PromptsTextField(),
+          SizedBox(height: 8.0),
+          _HashFunctionPicker(),
+          SizedBox(height: 8.0),
+          _GridTypeSlider(),
+          SizedBox(height: 4.0),
+          _IconSizeSlider(),
+          // TODO: Implement it.
+        ],
       );
 }
