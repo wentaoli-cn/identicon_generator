@@ -1,45 +1,45 @@
-part of 'package:identicon_generator/ui/screens/home/bloc/home_bloc.dart';
+part of 'package:identicon_generator/ui/screens/common/bloc/icon_bloc.dart';
 
-final class HomeState extends Equatable {
-  const HomeState({
+final class IconState extends Equatable {
+  const IconState({
     this.prompts = '',
     this.hashFunction = SupportedHashFunction.md5,
     this.gridType = defaultGridType,
-    this.iconSize = defaultIconSize,
+    this.size = defaultSize,
   });
 
   static const gridTypeMin = 3.0;
   static const defaultGridType = 5.0;
   static const gridTypeMax = 12.0;
-  static const iconSizeBase = 2.0;
-  static const iconSizeMin = 32.0;
-  static const defaultIconSize = 128.0;
-  static const iconSizeMax = 512.0;
+  static const sizeBase = 2.0;
+  static const sizeMin = 32.0;
+  static const defaultSize = 128.0;
+  static const sizeMax = 512.0;
 
   final String prompts;
   final SupportedHashFunction hashFunction;
   final double gridType;
-  final double iconSize;
+  final double size;
 
   @override
   List<Object?> get props => [
         prompts,
         hashFunction,
         gridType,
-        iconSize,
+        size,
       ];
 
-  HomeState copyWith({
+  IconState copyWith({
     String? prompts,
     SupportedHashFunction? hashFunction,
     double? gridType,
-    double? iconSize,
+    double? size,
   }) =>
-      HomeState(
+      IconState(
         prompts: prompts ?? this.prompts,
         hashFunction: hashFunction ?? this.hashFunction,
         gridType: gridType ?? this.gridType,
-        iconSize: iconSize ?? this.iconSize,
+        size: size ?? this.size,
       );
 }
 

@@ -6,7 +6,7 @@ import 'package:identicon_generator/ui/res/color.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
 import 'package:identicon_generator/ui/res/image/image.dart';
 import 'package:identicon_generator/ui/res/style.dart';
-import 'package:identicon_generator/ui/screens/home/bloc/home_bloc.dart';
+import 'package:identicon_generator/ui/screens/common/bloc/icon_bloc.dart';
 
 part 'package:identicon_generator/ui/screens/home/widget/simple.dart';
 

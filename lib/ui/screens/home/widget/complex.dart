@@ -13,7 +13,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
   String get _text => _textController.text;
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => TextField(
           controller: _textController,
           decoration: InputDecoration(
@@ -43,7 +43,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
                   setState(() {
                     _textController.clear();
                   });
-                  context.read<HomeBloc>().add(HomePromptsChanged(prompts: ''));
+                  context.read<IconBloc>().add(IconPromptsChanged(prompts: ''));
                 }
               },
               child: const Icon(Icons.close_rounded, size: 24.0),
@@ -60,7 +60,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
           style: TextStylez.regular16,
           textAlignVertical: TextAlignVertical.center,
           onChanged: (value) {
-            context.read<HomeBloc>().add(HomePromptsChanged(prompts: value));
+            context.read<IconBloc>().add(IconPromptsChanged(prompts: value));
           },
           onTapOutside: (_) {
             FocusScope.of(context).unfocus();
@@ -88,7 +88,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
       OverlayEntry(builder: (_) => const SizedBox.shrink());
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => GestureDetector(
           onTap: () {
             setState(() {
@@ -186,8 +186,8 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                                   isSelected: value == selectedHashFunction,
                                   onTap: () {
                                     _dismissMenu();
-                                    context.read<HomeBloc>().add(
-                                        HomeHashFunctionChanged(
+                                    context.read<IconBloc>().add(
+                                        IconHashFunctionChanged(
                                             hashFunction: value));
                                   },
                                 ),

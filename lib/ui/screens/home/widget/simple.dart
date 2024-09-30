@@ -62,17 +62,17 @@ class _GridTypeSlider extends StatelessWidget {
   const _GridTypeSlider();
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
           title: S.current.homeGridTypeHelper,
           value: state.gridType,
           description: S.current.homeGridTypeDescription(state.gridType),
-          min: HomeState.gridTypeMin,
-          max: HomeState.gridTypeMax,
+          min: IconState.gridTypeMin,
+          max: IconState.gridTypeMax,
           onChange: (value) {
             context
-                .read<HomeBloc>()
-                .add(HomeGridTypeChanged(gridType: value.roundToDouble()));
+                .read<IconBloc>()
+                .add(IconGridTypeChanged(gridType: value.roundToDouble()));
           },
         ),
       );
@@ -82,19 +82,19 @@ class _IconSizeSlider extends StatelessWidget {
   const _IconSizeSlider();
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<HomeBloc, HomeState>(
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
           title: S.current.homeIconSizeHelper,
-          value: state.iconSize,
-          description: S.current.homeIconSizeDescription(state.iconSize),
-          min: HomeState.iconSizeMin,
-          max: HomeState.iconSizeMax,
+          value: state.size,
+          description: S.current.homeIconSizeDescription(state.size),
+          min: IconState.sizeMin,
+          max: IconState.sizeMax,
           onChange: (value) {
             final exponent =
-                (log(value) / log(HomeState.iconSizeBase)).roundToDouble();
-            final size = pow(HomeState.iconSizeBase, exponent).toDouble();
+                (log(value) / log(IconState.sizeBase)).roundToDouble();
+            final size = pow(IconState.sizeBase, exponent).toDouble();
 
-            context.read<HomeBloc>().add(HomeIconSizeChanged(iconSize: size));
+            context.read<IconBloc>().add(IconSizeChanged(size: size));
           },
         ),
       );
