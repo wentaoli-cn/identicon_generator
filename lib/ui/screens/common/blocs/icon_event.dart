@@ -1,4 +1,4 @@
-part of 'package:identicon_generator/ui/screens/common/bloc/icon_bloc.dart';
+part of 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 
 sealed class IconEvent {}
 

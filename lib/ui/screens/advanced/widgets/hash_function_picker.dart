@@ -1,82 +1,11 @@
-part of 'package:identicon_generator/ui/screens/home/home_screen.dart';
-
-class _PromptsTextField extends StatefulWidget {
-  const _PromptsTextField();
-
-  @override
-  State<_PromptsTextField> createState() => _PromptsTextFieldState();
-}
-
-class _PromptsTextFieldState extends State<_PromptsTextField> {
-  final _textController = TextEditingController();
-
-  String get _text => _textController.text;
-
-  @override
-  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
-        builder: (context, state) => TextField(
-          controller: _textController,
-          decoration: InputDecoration(
-            hintText: S.current.homePromptsHint,
-            hintStyle: TextStylez.regular16.copyWith(color: Colorz.darkGray),
-            helper: Row(
-              children: [
-                const Icon(
-                  Icons.warning_amber_rounded,
-                  size: 16.0,
-                  color: Colorz.indianRed,
-                ),
-                const SizedBox(width: 8.0),
-                Expanded(
-                  child: Text(
-                    S.current.homePromptsHelper,
-                    style:
-                        TextStylez.regular14.copyWith(color: Colorz.indianRed),
-                  ),
-                ),
-              ],
-            ),
-            contentPadding: EdgeInsets.zero,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                if (_text.isNotEmpty) {
-                  setState(() {
-                    _textController.clear();
-                  });
-                  context.read<IconBloc>().add(IconPromptsChanged(prompts: ''));
-                }
-              },
-              child: const Icon(Icons.close_rounded, size: 24.0),
-            ),
-            suffixIconColor: _text.isNotEmpty ? Colorz.white : Colorz.darkGray,
-            focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: Colorz.white),
-            ),
-            enabledBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: Colorz.darkGray),
-            ),
-          ),
-          textInputAction: TextInputAction.done,
-          style: TextStylez.regular16,
-          textAlignVertical: TextAlignVertical.center,
-          onChanged: (value) {
-            context.read<IconBloc>().add(IconPromptsChanged(prompts: value));
-          },
-          onTapOutside: (_) {
-            FocusScope.of(context).unfocus();
-          },
-        ),
-      );
-
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
-  }
-}
+part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
 
 class _HashFunctionPicker extends StatefulWidget {
   const _HashFunctionPicker();
+
+  static bool _isExpanded = false;
+
+  static get isExpanded => _isExpanded;
 
   @override
   State<_HashFunctionPicker> createState() => _HashFunctionPickerState();
@@ -89,27 +18,24 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
 
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
-        builder: (context, state) => GestureDetector(
-          onTap: () {
-            setState(() {
-              _isExpanded = !_isExpanded;
-            });
-            if (_isExpanded) {
-              _showMenu(selectedHashFunction: state.hashFunction);
-            } else {
-              _dismissMenu();
-            }
-          },
-          behavior: HitTestBehavior.translucent,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                S.current.homeHashFunctionHelper,
-                style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
-              ),
-              Row(
+        builder: (context, state) => Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              S.current.advancedHashFunctionHelper,
+              style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
+            ),
+            GestureDetector(
+              onTap: () {
+                if (_isExpanded) {
+                  _dismissMenu();
+                } else {
+                  _showMenu(selectedHashFunction: state.hashFunction);
+                }
+              },
+              behavior: HitTestBehavior.translucent,
+              child: Row(
                 children: [
                   Expanded(
                     child: Text(
@@ -129,18 +55,19 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                   )
                 ],
               ),
-              Divider(
-                height: 1.0,
-                thickness: 1.0,
-                color: _isExpanded ? Colorz.white : Colorz.darkGray,
-              ),
-            ],
-          ),
+            ),
+            Divider(
+              height: 1.0,
+              thickness: 1.0,
+              color: _isExpanded ? Colorz.white : Colorz.darkGray,
+            ),
+          ],
         ),
       );
 
   @override
   void dispose() {
+    _overlayEntry.remove();
     _overlayEntry.dispose();
     super.dispose();
   }
@@ -160,21 +87,24 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                 onTap: () {
                   _dismissMenu();
                 },
-                child: Container(
-                  color: Colorz.transparent,
-                  width: deviceSize.width,
-                  height: deviceSize.height,
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                  child: Container(
+                    color: Colorz.black.withOpacity(0.1),
+                    width: deviceSize.width,
+                    height: deviceSize.height,
+                  ),
                 ),
               ),
               Positioned(
                 left: location.dx,
                 top: location.dy + anchorSize.height + 4.0,
+                right: location.dx,
                 child: Material(
                   color: Colorz.transparent,
                   child: IntrinsicHeight(
                     child: ClipRRect(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(6.0)),
+                      borderRadius: BorderRadius.circular(6.0),
                       child: ColoredBox(
                         color: Colorz.darkGray,
                         child: Column(
@@ -205,6 +135,10 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
       },
     );
     Overlay.of(context).insert(_overlayEntry);
+    setState(() {
+      _isExpanded = true;
+    });
+    _HashFunctionPicker._isExpanded = true;
   }
 
   void _dismissMenu() {
@@ -212,6 +146,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
     setState(() {
       _isExpanded = false;
     });
+    _HashFunctionPicker._isExpanded = false;
   }
 
   Widget _menuItem({

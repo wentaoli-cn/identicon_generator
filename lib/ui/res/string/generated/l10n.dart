@@ -60,11 +60,11 @@ class S {
     );
   }
 
-  /// `An identicon is a visual representation of a hash value.`
-  String get homeExplanation {
+  /// `Identicon Generator`
+  String get homeTitle {
     return Intl.message(
-      'An identicon is a visual representation of a hash value.',
-      name: 'homeExplanation',
+      'Identicon Generator',
+      name: 'homeTitle',
       desc: '',
       args: [],
     );
@@ -90,51 +90,71 @@ class S {
     );
   }
 
-  /// `Hash function used to generate`
-  String get homeHashFunctionHelper {
+  /// `Advanced`
+  String get homeAdvancedButtonText {
     return Intl.message(
-      'Hash function used to generate',
-      name: 'homeHashFunctionHelper',
+      'Advanced',
+      name: 'homeAdvancedButtonText',
       desc: '',
       args: [],
     );
   }
 
-  /// `Grid type used to generate`
-  String get homeGridTypeHelper {
+  /// `Advanced`
+  String get advancedTitle {
     return Intl.message(
-      'Grid type used to generate',
-      name: 'homeGridTypeHelper',
+      'Advanced',
+      name: 'advancedTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hash function`
+  String get advancedHashFunctionHelper {
+    return Intl.message(
+      'Hash function',
+      name: 'advancedHashFunctionHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grid type`
+  String get advancedGridTypeHelper {
+    return Intl.message(
+      'Grid type',
+      name: 'advancedGridTypeHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `{value} × {value}`
-  String homeGridTypeDescription(Object value) {
+  String advancedGridTypeDescription(Object value) {
     return Intl.message(
       '$value × $value',
-      name: 'homeGridTypeDescription',
+      name: 'advancedGridTypeDescription',
       desc: '',
       args: [value],
     );
   }
 
-  /// `Icon size used to generate`
-  String get homeIconSizeHelper {
+  /// `Size`
+  String get advancedSizeHelper {
     return Intl.message(
-      'Icon size used to generate',
-      name: 'homeIconSizeHelper',
+      'Size',
+      name: 'advancedSizeHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `{value} px`
-  String homeIconSizeDescription(Object value) {
+  String advancedSizeDescription(Object value) {
     return Intl.message(
       '$value px',
-      name: 'homeIconSizeDescription',
+      name: 'advancedSizeDescription',
       desc: '',
       args: [value],
     );

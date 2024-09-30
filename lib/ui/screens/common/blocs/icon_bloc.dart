@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-part 'package:identicon_generator/ui/screens/common/bloc/icon_event.dart';
+part 'package:identicon_generator/ui/screens/common/blocs/icon_event.dart';
 
-part 'package:identicon_generator/ui/screens/common/bloc/icon_state.dart';
+part 'package:identicon_generator/ui/screens/common/blocs/icon_state.dart';
 
 class IconBloc extends Bloc<IconEvent, IconState> {
   IconBloc() : super(const IconState()) {

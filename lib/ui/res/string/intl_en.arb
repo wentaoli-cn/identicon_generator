@@ -1,12 +1,14 @@
 {
   "@@locale": "en",
   "appName": "Identicon Generator",
-  "homeExplanation": "An identicon is a visual representation of a hash value.",
+  "homeTitle": "Identicon Generator",
   "homePromptsHint": "Please enter your prompts here.",
   "homePromptsHelper": "Do not use sensitive information, your identicon may reveal it.",
-  "homeHashFunctionHelper": "Hash function used to generate",
-  "homeGridTypeHelper": "Grid type used to generate",
-  "homeGridTypeDescription": "{value} × {value}",
-  "homeIconSizeHelper": "Icon size used to generate",
-  "homeIconSizeDescription": "{value} px"
+  "homeAdvancedButtonText": "Advanced",
+  "advancedTitle": "Advanced",
+  "advancedHashFunctionHelper": "Hash function",
+  "advancedGridTypeHelper": "Grid type",
+  "advancedGridTypeDescription": "{value} × {value}",
+  "advancedSizeHelper": "Size",
+  "advancedSizeDescription": "{value} px"
 }

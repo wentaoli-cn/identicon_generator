@@ -37,6 +37,9 @@ class TextStylez {
 final appTheme = ThemeData(
   scaffoldBackgroundColor: Colorz.black,
   fontFamily: Fontz.ubuntuMono.name,
+  sliderTheme: SliderThemeData(
+    overlayShape: SliderComponentShape.noOverlay,
+  ),
   textSelectionTheme: const TextSelectionThemeData(
     cursorColor: Colorz.white,
     selectionColor: Colorz.khaki,

@@ -26,17 +26,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "advancedGridTypeDescription": m0,
+        "advancedGridTypeHelper":
+            MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
+        "advancedHashFunctionHelper":
+            MessageLookupByLibrary.simpleMessage("生成 Identicon 的哈希算法"),
+        "advancedSizeDescription": m1,
+        "advancedSizeHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),
+        "advancedTitle": MessageLookupByLibrary.simpleMessage("高级选项"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
-        "homeExplanation":
-            MessageLookupByLibrary.simpleMessage("Identicon 是哈希值的一种可视化表示。"),
-        "homeGridTypeDescription": m0,
-        "homeGridTypeHelper": MessageLookupByLibrary.simpleMessage("用于生成的网格类型"),
-        "homeHashFunctionHelper":
-            MessageLookupByLibrary.simpleMessage("用于生成的哈希算法"),
-        "homeIconSizeDescription": m1,
-        "homeIconSizeHelper": MessageLookupByLibrary.simpleMessage("用于生成的图标大小"),
+        "homeAdvancedButtonText": MessageLookupByLibrary.simpleMessage("高级选项"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "请勿使用敏感信息, 你的 Identicon 可能会泄露它。"),
-        "homePromptsHint": MessageLookupByLibrary.simpleMessage("请在此处输入你的信息。")
+        "homePromptsHint":
+            MessageLookupByLibrary.simpleMessage("请在此输入用于生成 Identicon 的信息。"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon 生成器")
       };
 }

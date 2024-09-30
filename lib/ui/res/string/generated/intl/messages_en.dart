@@ -26,20 +26,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "advancedGridTypeDescription": m0,
+        "advancedGridTypeHelper":
+            MessageLookupByLibrary.simpleMessage("Grid type"),
+        "advancedHashFunctionHelper":
+            MessageLookupByLibrary.simpleMessage("Hash function"),
+        "advancedSizeDescription": m1,
+        "advancedSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
+        "advancedTitle": MessageLookupByLibrary.simpleMessage("Advanced"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
-        "homeExplanation": MessageLookupByLibrary.simpleMessage(
-            "An identicon is a visual representation of a hash value."),
-        "homeGridTypeDescription": m0,
-        "homeGridTypeHelper":
-            MessageLookupByLibrary.simpleMessage("Grid type used to generate"),
-        "homeHashFunctionHelper": MessageLookupByLibrary.simpleMessage(
-            "Hash function used to generate"),
-        "homeIconSizeDescription": m1,
-        "homeIconSizeHelper":
-            MessageLookupByLibrary.simpleMessage("Icon size used to generate"),
+        "homeAdvancedButtonText":
+            MessageLookupByLibrary.simpleMessage("Advanced"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "Do not use sensitive information, your identicon may reveal it."),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage(
-            "Please enter your prompts here.")
+            "Please enter your prompts here."),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon Generator")
       };
 }

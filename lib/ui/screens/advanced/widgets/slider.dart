@@ -1,16 +1,6 @@
-part of 'package:identicon_generator/ui/screens/home/home_screen.dart';
+part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
 
-class _Explanation extends StatelessWidget {
-  const _Explanation();
-
-  @override
-  Widget build(BuildContext context) => Text(
-        S.current.homeExplanation,
-        style: TextStylez.regular16,
-      );
-}
-
-class _Slider extends StatelessWidget {
+class _Slider extends StatefulWidget {
   const _Slider({
     required this.title,
     required this.value,
@@ -28,19 +18,37 @@ class _Slider extends StatelessWidget {
   final ValueChanged<double>? onChange;
 
   @override
+  State<_Slider> createState() => _SliderState();
+}
+
+class _SliderState extends State<_Slider> {
+  bool isChanging = false;
+
+  @override
   Widget build(BuildContext context) => Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            title,
+            widget.title,
             style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
           ),
+          const SizedBox(height: 8.0),
           Slider(
-            value: value,
-            onChanged: onChange,
-            min: min,
-            max: max,
+            value: widget.value,
+            onChanged: widget.onChange,
+            onChangeStart: (_) {
+              setState(() {
+                isChanging = true;
+              });
+            },
+            onChangeEnd: (_) {
+              setState(() {
+                isChanging = false;
+              });
+            },
+            min: widget.min,
+            max: widget.max,
             activeColor: Colorz.white,
             inactiveColor: Colorz.darkGray,
             overlayColor: const WidgetStatePropertyAll(Colorz.transparent),
@@ -48,11 +56,14 @@ class _Slider extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                description,
-                style: TextStylez.regular16,
-              ),
+              Text(widget.description, style: TextStylez.regular16),
             ],
+          ),
+          const SizedBox(height: 8.0),
+          Divider(
+            height: 1.0,
+            thickness: 1.0,
+            color: isChanging ? Colorz.white : Colorz.darkGray,
           ),
         ],
       );
@@ -64,9 +75,9 @@ class _GridTypeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
-          title: S.current.homeGridTypeHelper,
+          title: S.current.advancedGridTypeHelper,
           value: state.gridType,
-          description: S.current.homeGridTypeDescription(state.gridType),
+          description: S.current.advancedGridTypeDescription(state.gridType),
           min: IconState.gridTypeMin,
           max: IconState.gridTypeMax,
           onChange: (value) {
@@ -84,9 +95,9 @@ class _IconSizeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
-          title: S.current.homeIconSizeHelper,
+          title: S.current.advancedSizeHelper,
           value: state.size,
-          description: S.current.homeIconSizeDescription(state.size),
+          description: S.current.advancedSizeDescription(state.size),
           min: IconState.sizeMin,
           max: IconState.sizeMax,
           onChange: (value) {

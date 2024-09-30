@@ -1,16 +1,14 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/res/color.dart';
+import 'package:identicon_generator/ui/res/route.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
-import 'package:identicon_generator/ui/res/image/image.dart';
 import 'package:identicon_generator/ui/res/style.dart';
-import 'package:identicon_generator/ui/screens/common/bloc/icon_bloc.dart';
+import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 
-part 'package:identicon_generator/ui/screens/home/widget/simple.dart';
-
-part 'package:identicon_generator/ui/screens/home/widget/complex.dart';
+part 'package:identicon_generator/ui/screens/home/widgets/advanced_button.dart';
+part 'package:identicon_generator/ui/screens/home/widgets/prompts_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,10 +25,9 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) => AppBar(
-        leading: Image.asset(Imagez.logo.path, width: 18.0),
         title: Text(
-          S.current.appName,
-          style: TextStylez.bold18,
+          S.current.homeTitle,
+          style: TextStylez.bold20,
         ),
         elevation: 0.0,
         backgroundColor: Colorz.transparent,
@@ -45,22 +42,12 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView(
-        padding: const EdgeInsets.only(
-          left: 12.0,
-          right: 12.0,
-          bottom: 12.0,
-        ),
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         shrinkWrap: true,
         children: const [
-          _Explanation(),
-          SizedBox(height: 4.0),
           _PromptsTextField(),
           SizedBox(height: 8.0),
-          _HashFunctionPicker(),
-          SizedBox(height: 8.0),
-          _GridTypeSlider(),
-          SizedBox(height: 4.0),
-          _IconSizeSlider(),
+          _AdvancedButton(),
           // TODO: Implement it.
         ],
       );
