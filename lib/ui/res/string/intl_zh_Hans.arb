@@ -10,5 +10,14 @@
   "advancedGridTypeHelper": "生成 Identicon 的网格类型",
   "advancedGridTypeDescription": "{value} × {value}",
   "advancedSizeHelper": "生成的 Identicon 的大小",
-  "advancedSizeDescription": "{value} px"
+  "advancedSizeDescription": "{value} px",
+  "advancedColorHelper": "生成的 Identicon 的颜色",
+  "advancedRandomColorsLabel": "使用随机颜色？",
+  "advancedPixelColorLabel": "填充色",
+  "advancedBackgroundColorLabel": "背景色",
+  "advancedColorRedLabel": "红",
+  "advancedColorGreenLabel": "绿",
+  "advancedColorBlueLabel": "蓝",
+  "advancedColorWarning": "填充色和背景色不能太过相似（或是相同）以便于区分。"
+
 }

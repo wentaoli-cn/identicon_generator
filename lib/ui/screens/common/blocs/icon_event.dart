@@ -25,3 +25,10 @@ final class IconSizeChanged extends IconEvent {
 
   final double size;
 }
+
+final class IconColorChanged extends IconEvent {
+  IconColorChanged({required this.useRandomColors, required this.colors});
+
+  final bool useRandomColors;
+  final IconColor colors;
+}

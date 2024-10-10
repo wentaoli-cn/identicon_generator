@@ -159,6 +159,86 @@ class S {
       args: [value],
     );
   }
+
+  /// `Color`
+  String get advancedColorHelper {
+    return Intl.message(
+      'Color',
+      name: 'advancedColorHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Random color?`
+  String get advancedRandomColorsLabel {
+    return Intl.message(
+      'Random color?',
+      name: 'advancedRandomColorsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pixel color`
+  String get advancedPixelColorLabel {
+    return Intl.message(
+      'Pixel color',
+      name: 'advancedPixelColorLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Background color`
+  String get advancedBackgroundColorLabel {
+    return Intl.message(
+      'Background color',
+      name: 'advancedBackgroundColorLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Red`
+  String get advancedColorRedLabel {
+    return Intl.message(
+      'Red',
+      name: 'advancedColorRedLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Green`
+  String get advancedColorGreenLabel {
+    return Intl.message(
+      'Green',
+      name: 'advancedColorGreenLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blue`
+  String get advancedColorBlueLabel {
+    return Intl.message(
+      'Blue',
+      name: 'advancedColorBlueLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.`
+  String get advancedColorWarning {
+    return Intl.message(
+      'Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.',
+      name: 'advancedColorWarning',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

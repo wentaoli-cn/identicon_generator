@@ -10,5 +10,13 @@
   "advancedGridTypeHelper": "Grid type",
   "advancedGridTypeDescription": "{value} × {value}",
   "advancedSizeHelper": "Size",
-  "advancedSizeDescription": "{value} px"
+  "advancedSizeDescription": "{value} px",
+  "advancedColorHelper": "Color",
+  "advancedRandomColorsLabel": "Random color?",
+  "advancedPixelColorLabel": "Pixel color",
+  "advancedBackgroundColorLabel": "Background color",
+  "advancedColorRedLabel": "Red",
+  "advancedColorGreenLabel": "Green",
+  "advancedColorBlueLabel": "Blue",
+  "advancedColorWarning": "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily."
 }

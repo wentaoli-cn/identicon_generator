@@ -26,11 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "advancedBackgroundColorLabel":
+            MessageLookupByLibrary.simpleMessage("背景色"),
+        "advancedColorBlueLabel": MessageLookupByLibrary.simpleMessage("蓝"),
+        "advancedColorGreenLabel": MessageLookupByLibrary.simpleMessage("绿"),
+        "advancedColorHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的颜色"),
+        "advancedColorRedLabel": MessageLookupByLibrary.simpleMessage("红"),
+        "advancedColorWarning":
+            MessageLookupByLibrary.simpleMessage("填充色和背景色不能太过相似（或是相同）以便于区分。"),
         "advancedGridTypeDescription": m0,
         "advancedGridTypeHelper":
             MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
         "advancedHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("生成 Identicon 的哈希算法"),
+        "advancedPixelColorLabel": MessageLookupByLibrary.simpleMessage("填充色"),
+        "advancedRandomColorsLabel":
+            MessageLookupByLibrary.simpleMessage("使用随机颜色？"),
         "advancedSizeDescription": m1,
         "advancedSizeHelper":
             MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),

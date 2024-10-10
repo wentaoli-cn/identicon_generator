@@ -8,6 +8,9 @@ import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/res/style.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
 import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
+import 'package:identicon_generator/ui/utils/color_utils.dart';
+
+part 'package:identicon_generator/ui/screens/advanced/widgets/color_picker.dart';
 
 part 'package:identicon_generator/ui/screens/advanced/widgets/hash_function_picker.dart';
 
@@ -24,6 +27,9 @@ class AdvancedScreen extends StatelessWidget {
             return;
           }
           if (_HashFunctionPicker.isExpanded) {
+            return;
+          }
+          if (_ColorPicker.isExpanded) {
             return;
           }
           context.pop();
@@ -72,6 +78,8 @@ class _Body extends StatelessWidget {
           _GridTypeSlider(),
           SizedBox(height: 8.0),
           _IconSizeSlider(),
+          SizedBox(height: 8.0),
+          _ColorPicker(),
           // TODO: Implement it.
         ],
       );

@@ -26,11 +26,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "advancedBackgroundColorLabel":
+            MessageLookupByLibrary.simpleMessage("Background color"),
+        "advancedColorBlueLabel": MessageLookupByLibrary.simpleMessage("Blue"),
+        "advancedColorGreenLabel":
+            MessageLookupByLibrary.simpleMessage("Green"),
+        "advancedColorHelper": MessageLookupByLibrary.simpleMessage("Color"),
+        "advancedColorRedLabel": MessageLookupByLibrary.simpleMessage("Red"),
+        "advancedColorWarning": MessageLookupByLibrary.simpleMessage(
+            "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily."),
         "advancedGridTypeDescription": m0,
         "advancedGridTypeHelper":
             MessageLookupByLibrary.simpleMessage("Grid type"),
         "advancedHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("Hash function"),
+        "advancedPixelColorLabel":
+            MessageLookupByLibrary.simpleMessage("Pixel color"),
+        "advancedRandomColorsLabel":
+            MessageLookupByLibrary.simpleMessage("Random color?"),
         "advancedSizeDescription": m1,
         "advancedSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
         "advancedTitle": MessageLookupByLibrary.simpleMessage("Advanced"),

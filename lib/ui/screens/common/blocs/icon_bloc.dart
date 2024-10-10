@@ -1,5 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:identicon_generator/ui/res/color.dart';
+import 'package:identicon_generator/ui/utils/color_utils.dart';
 
 part 'package:identicon_generator/ui/screens/common/blocs/icon_event.dart';
 
@@ -11,6 +14,7 @@ class IconBloc extends Bloc<IconEvent, IconState> {
     on<IconHashFunctionChanged>(_onHashFunctionChanged);
     on<IconGridTypeChanged>(_onGridTypeChanged);
     on<IconSizeChanged>(_onSizeChanged);
+    on<IconColorChanged>(_onColorChanged);
   }
 
   Future<void> _onPromptsChanged(
@@ -45,5 +49,15 @@ class IconBloc extends Bloc<IconEvent, IconState> {
     Emitter<IconState> emit,
   ) async {
     emit(state.copyWith(size: event.size));
+  }
+
+  Future<void> _onColorChanged(
+    IconColorChanged event,
+    Emitter<IconState> emit,
+  ) async {
+    emit(state.copyWith(
+      useRandomColors: event.useRandomColors,
+      colors: event.colors,
+    ));
   }
 }

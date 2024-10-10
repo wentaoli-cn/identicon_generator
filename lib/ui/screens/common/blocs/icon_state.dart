@@ -6,6 +6,11 @@ final class IconState extends Equatable {
     this.hashFunction = SupportedHashFunction.md5,
     this.gridType = defaultGridType,
     this.size = defaultSize,
+    this.useRandomColors = true,
+    this.colors = const IconColor(
+      pixelColor: defaultPixelColor,
+      backgroundColor: defaultBackgroundColor,
+    ),
   });
 
   static const gridTypeMin = 3.0;
@@ -15,11 +20,15 @@ final class IconState extends Equatable {
   static const sizeMin = 32.0;
   static const defaultSize = 128.0;
   static const sizeMax = 512.0;
+  static const defaultPixelColor = Colorz.cornflowerBlue;
+  static const defaultBackgroundColor = Colorz.white;
 
   final String prompts;
   final SupportedHashFunction hashFunction;
   final double gridType;
   final double size;
+  final bool useRandomColors;
+  final IconColor colors;
 
   @override
   List<Object?> get props => [
@@ -27,6 +36,8 @@ final class IconState extends Equatable {
         hashFunction,
         gridType,
         size,
+        useRandomColors,
+        colors,
       ];
 
   IconState copyWith({
@@ -34,12 +45,16 @@ final class IconState extends Equatable {
     SupportedHashFunction? hashFunction,
     double? gridType,
     double? size,
+    bool? useRandomColors,
+    IconColor? colors,
   }) =>
       IconState(
         prompts: prompts ?? this.prompts,
         hashFunction: hashFunction ?? this.hashFunction,
         gridType: gridType ?? this.gridType,
         size: size ?? this.size,
+        useRandomColors: useRandomColors ?? this.useRandomColors,
+        colors: colors ?? this.colors,
       );
 }
 
@@ -56,4 +71,23 @@ enum SupportedHashFunction {
   const SupportedHashFunction({required this.name});
 
   final String name;
+}
+
+class IconColor extends Equatable {
+  const IconColor({required this.pixelColor, required this.backgroundColor});
+
+  final Color pixelColor;
+  final Color backgroundColor;
+
+  @override
+  List<Object?> get props => [pixelColor, backgroundColor];
+
+  IconColor copyWith({
+    Color? pixelColor,
+    Color? backgroundColor,
+  }) =>
+      IconColor(
+        pixelColor: pixelColor ?? this.pixelColor,
+        backgroundColor: backgroundColor ?? this.backgroundColor,
+      );
 }
