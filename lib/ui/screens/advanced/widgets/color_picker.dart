@@ -70,7 +70,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                   _dismissPicker();
                 },
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                  filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
                   child: Container(
                     color: Colorz.black.withOpacity(0.1),
                     width: deviceSize.width,

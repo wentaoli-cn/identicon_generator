@@ -75,7 +75,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                   _dismissMenu();
                 },
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                  filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
                   child: Container(
                     color: Colorz.black.withOpacity(0.1),
                     width: deviceSize.width,
