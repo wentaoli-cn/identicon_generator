@@ -19,7 +19,9 @@ class OverlayUtils {
   }
 
   static void rebuildOverlay(OverlayEntry entry) {
-    entry.markNeedsBuild();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      entry.markNeedsBuild();
+    });
   }
 
   static void rebuildAll() {

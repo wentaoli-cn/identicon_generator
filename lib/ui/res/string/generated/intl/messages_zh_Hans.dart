@@ -20,22 +20,29 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh_Hans';
 
-  static String m0(value) => "${value} × ${value}";
+  static String m0(value) => "蓝 - ${value}";
 
-  static String m1(value) => "${value} px";
+  static String m1(value) => "绿 - ${value}";
+
+  static String m2(value) => "红 - ${value}";
+
+  static String m3(value) => "${value} × ${value}";
+
+  static String m4(value) => "${value} px";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "advancedBackgroundColorLabel":
             MessageLookupByLibrary.simpleMessage("背景色"),
-        "advancedColorBlueLabel": MessageLookupByLibrary.simpleMessage("蓝"),
-        "advancedColorGreenLabel": MessageLookupByLibrary.simpleMessage("绿"),
+        "advancedColorBlueLabel": m0,
+        "advancedColorGreenLabel": m1,
+        "advancedColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
         "advancedColorHelper":
             MessageLookupByLibrary.simpleMessage("生成的 Identicon 的颜色"),
-        "advancedColorRedLabel": MessageLookupByLibrary.simpleMessage("红"),
+        "advancedColorRedLabel": m2,
         "advancedColorWarning":
             MessageLookupByLibrary.simpleMessage("填充色和背景色不能太过相似（或是相同）以便于区分。"),
-        "advancedGridTypeDescription": m0,
+        "advancedGridTypeDescription": m3,
         "advancedGridTypeHelper":
             MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
         "advancedHashFunctionHelper":
@@ -43,7 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "advancedPixelColorLabel": MessageLookupByLibrary.simpleMessage("填充色"),
         "advancedRandomColorsLabel":
             MessageLookupByLibrary.simpleMessage("使用随机颜色？"),
-        "advancedSizeDescription": m1,
+        "advancedSizeDescription": m4,
         "advancedSizeHelper":
             MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),
         "advancedTitle": MessageLookupByLibrary.simpleMessage("高级选项"),

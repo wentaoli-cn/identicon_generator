@@ -20,22 +20,28 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(value) => "${value} × ${value}";
+  static String m0(value) => "B - ${value}";
 
-  static String m1(value) => "${value} px";
+  static String m1(value) => "G - ${value}";
+
+  static String m2(value) => "R - ${value}";
+
+  static String m3(value) => "${value} × ${value}";
+
+  static String m4(value) => "${value} px";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "advancedBackgroundColorLabel":
             MessageLookupByLibrary.simpleMessage("Background color"),
-        "advancedColorBlueLabel": MessageLookupByLibrary.simpleMessage("Blue"),
-        "advancedColorGreenLabel":
-            MessageLookupByLibrary.simpleMessage("Green"),
+        "advancedColorBlueLabel": m0,
+        "advancedColorGreenLabel": m1,
+        "advancedColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
         "advancedColorHelper": MessageLookupByLibrary.simpleMessage("Color"),
-        "advancedColorRedLabel": MessageLookupByLibrary.simpleMessage("Red"),
+        "advancedColorRedLabel": m2,
         "advancedColorWarning": MessageLookupByLibrary.simpleMessage(
             "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily."),
-        "advancedGridTypeDescription": m0,
+        "advancedGridTypeDescription": m3,
         "advancedGridTypeHelper":
             MessageLookupByLibrary.simpleMessage("Grid type"),
         "advancedHashFunctionHelper":
@@ -44,7 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pixel color"),
         "advancedRandomColorsLabel":
             MessageLookupByLibrary.simpleMessage("Random color?"),
-        "advancedSizeDescription": m1,
+        "advancedSizeDescription": m4,
         "advancedSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
         "advancedTitle": MessageLookupByLibrary.simpleMessage("Advanced"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),

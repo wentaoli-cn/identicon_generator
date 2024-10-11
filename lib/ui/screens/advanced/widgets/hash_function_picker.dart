@@ -22,11 +22,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
             ),
             GestureDetector(
               onTap: () {
-                if (_isExpanded) {
-                  _dismissMenu();
-                } else {
-                  _showMenu(selectedHashFunction: state.hashFunction);
-                }
+                _showMenu(selectedHashFunction: state.hashFunction);
               },
               behavior: HitTestBehavior.translucent,
               child: Row(
@@ -66,59 +62,60 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
     final deviceSize = MediaQuery.of(context).size;
 
     OverlayUtils.tryToShowOverlay(
-        context,
-        OverlayEntry(
-          builder: (context) => Stack(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  _dismissMenu();
-                },
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
-                  child: Container(
-                    color: Colorz.black.withOpacity(0.1),
-                    width: deviceSize.width,
-                    height: deviceSize.height,
-                  ),
+      context,
+      OverlayEntry(
+        builder: (context) => Stack(
+          children: [
+            GestureDetector(
+              onTap: () {
+                _dismissMenu();
+              },
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
+                child: Container(
+                  color: Colorz.black.withOpacity(0.1),
+                  width: deviceSize.width,
+                  height: deviceSize.height,
                 ),
               ),
-              Positioned(
-                left: location.dx,
-                top: location.dy + anchorSize.height + 4.0,
-                right: location.dx,
-                child: Material(
-                  color: Colorz.transparent,
-                  child: IntrinsicHeight(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(6.0),
-                      child: ColoredBox(
-                        color: Colorz.darkGray,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: SupportedHashFunction.values
-                              .map<Widget>(
-                                (value) => _menuItem(
-                                  value: value,
-                                  isSelected: value == selectedHashFunction,
-                                  onTap: () {
-                                    _dismissMenu();
-                                    context.read<IconBloc>().add(
-                                        IconHashFunctionChanged(
-                                            hashFunction: value));
-                                  },
-                                ),
-                              )
-                              .toList(),
-                        ),
+            ),
+            Positioned(
+              left: location.dx,
+              top: location.dy + anchorSize.height + 4.0,
+              right: location.dx,
+              child: Material(
+                color: Colorz.transparent,
+                child: IntrinsicHeight(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.0),
+                    child: ColoredBox(
+                      color: Colorz.darkGray,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: SupportedHashFunction.values
+                            .map<Widget>(
+                              (value) => _menuItem(
+                                value: value,
+                                isSelected: value == selectedHashFunction,
+                                onTap: () {
+                                  context.read<IconBloc>().add(
+                                      IconHashFunctionChanged(
+                                          hashFunction: value));
+                                  _dismissMenu();
+                                },
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
     setState(() {
       _isExpanded = true;
     });

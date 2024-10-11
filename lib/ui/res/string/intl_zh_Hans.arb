@@ -15,9 +15,9 @@
   "advancedRandomColorsLabel": "使用随机颜色？",
   "advancedPixelColorLabel": "填充色",
   "advancedBackgroundColorLabel": "背景色",
-  "advancedColorRedLabel": "红",
-  "advancedColorGreenLabel": "绿",
-  "advancedColorBlueLabel": "蓝",
-  "advancedColorWarning": "填充色和背景色不能太过相似（或是相同）以便于区分。"
-
+  "advancedColorRedLabel": "红 - {value}",
+  "advancedColorGreenLabel": "绿 - {value}",
+  "advancedColorBlueLabel": "蓝 - {value}",
+  "advancedColorWarning": "填充色和背景色不能太过相似（或是相同）以便于区分。",
+  "advancedColorHashLabel": "#"
 }

@@ -200,33 +200,33 @@ class S {
     );
   }
 
-  /// `Red`
-  String get advancedColorRedLabel {
+  /// `R - {value}`
+  String advancedColorRedLabel(Object value) {
     return Intl.message(
-      'Red',
+      'R - $value',
       name: 'advancedColorRedLabel',
       desc: '',
-      args: [],
+      args: [value],
     );
   }
 
-  /// `Green`
-  String get advancedColorGreenLabel {
+  /// `G - {value}`
+  String advancedColorGreenLabel(Object value) {
     return Intl.message(
-      'Green',
+      'G - $value',
       name: 'advancedColorGreenLabel',
       desc: '',
-      args: [],
+      args: [value],
     );
   }
 
-  /// `Blue`
-  String get advancedColorBlueLabel {
+  /// `B - {value}`
+  String advancedColorBlueLabel(Object value) {
     return Intl.message(
-      'Blue',
+      'B - $value',
       name: 'advancedColorBlueLabel',
       desc: '',
-      args: [],
+      args: [value],
     );
   }
 
@@ -235,6 +235,16 @@ class S {
     return Intl.message(
       'Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.',
       name: 'advancedColorWarning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#`
+  String get advancedColorHashLabel {
+    return Intl.message(
+      '#',
+      name: 'advancedColorHashLabel',
       desc: '',
       args: [],
     );
