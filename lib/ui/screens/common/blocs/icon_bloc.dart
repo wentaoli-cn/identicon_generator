@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:identicon_generator/ui/res/color.dart';
-import 'package:identicon_generator/ui/utils/color_utils.dart';
 
 part 'package:identicon_generator/ui/screens/common/blocs/icon_event.dart';
 
