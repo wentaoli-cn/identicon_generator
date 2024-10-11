@@ -23,8 +23,6 @@ class _SingleColorPicker extends StatefulWidget {
 
 class _SingleColorPickerState extends State<_SingleColorPicker> {
   bool _isExpanded = false;
-  OverlayEntry _overlayEntry =
-      OverlayEntry(builder: (_) => const SizedBox.shrink());
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -56,150 +54,140 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
         ),
       );
 
-  @override
-  void dispose() {
-    _overlayEntry.remove();
-    _overlayEntry.dispose();
-    super.dispose();
-  }
-
   void _showPicker({required Color color, ValueChanged<Color>? onChange}) {
     final anchor = context.findRenderObject() as RenderBox;
     final anchorSize = anchor.size;
     final location = anchor.localToGlobal(Offset.zero);
     final deviceSize = MediaQuery.of(context).size;
 
-    setState(() {
-      _overlayEntry = OverlayEntry(
-        builder: (context) => Stack(
-          children: [
-            GestureDetector(
-              onTap: () {
-                _dismissPicker();
-              },
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
-                child: Container(
-                  color: Colorz.black.withOpacity(0.1),
-                  width: deviceSize.width,
-                  height: deviceSize.height,
+    OverlayUtils.tryToShowOverlay(
+        context,
+        OverlayEntry(
+          builder: (context) => Stack(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  _dismissPicker();
+                },
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                  child: Container(
+                    color: Colorz.black.withOpacity(0.1),
+                    width: deviceSize.width,
+                    height: deviceSize.height,
+                  ),
                 ),
               ),
-            ),
-            Positioned(
-              left: 12.0,
-              top: location.dy + anchorSize.height + 4.0,
-              right: 12.0,
-              child: Material(
-                color: Colorz.transparent,
-                child: IntrinsicHeight(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(6.0),
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      color: Colorz.darkGray,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: widget.value,
-                              border: Border.all(
-                                color: ColorUtils.areColorsSimilar(
-                                  color1: widget.value,
-                                  color2: Colorz.white,
-                                )
-                                    ? Colorz.black
-                                    : Colorz.white,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            width: 24.0,
-                            height: 24.0,
-                          ),
-                          const SizedBox(height: 4.0),
-                          _colorSlider(
-                            value: widget.red,
-                            label: S.current.advancedColorRedLabel,
-                            onChange: (value) {
-                              widget.onChange?.call(Color.fromARGB(
-                                255,
-                                value,
-                                widget.green,
-                                widget.blue,
-                              ));
-                              _overlayEntry.markNeedsBuild();
-                            },
-                          ),
-                          _colorSlider(
-                            value: widget.green,
-                            label: S.current.advancedColorGreenLabel,
-                            onChange: (value) {
-                              widget.onChange?.call(Color.fromARGB(
-                                255,
-                                widget.red,
-                                value,
-                                widget.blue,
-                              ));
-                              _overlayEntry.markNeedsBuild();
-                            },
-                          ),
-                          _colorSlider(
-                            value: widget.blue,
-                            label: S.current.advancedColorBlueLabel,
-                            onChange: (value) {
-                              widget.onChange?.call(Color.fromARGB(
-                                255,
-                                widget.red,
-                                widget.green,
-                                value,
-                              ));
-                              _overlayEntry.markNeedsBuild();
-                            },
-                          ),
-                          const SizedBox(height: 4.0),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.warning_amber_rounded,
-                                size: 16.0,
-                                color: Colorz.indianRed,
-                              ),
-                              const SizedBox(width: 8.0),
-                              Expanded(
-                                child: Text(
-                                  S.current.advancedColorWarning,
-                                  style: TextStylez.regular14
-                                      .copyWith(color: Colorz.indianRed),
+              Positioned(
+                left: 12.0,
+                top: location.dy + anchorSize.height + 4.0,
+                right: 12.0,
+                child: Material(
+                  color: Colorz.transparent,
+                  child: IntrinsicHeight(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(6.0),
+                      child: Container(
+                        padding: const EdgeInsets.all(8.0),
+                        color: Colorz.darkGray,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: widget.value,
+                                border: Border.all(
+                                  color: ColorUtils.areColorsSimilar(
+                                    color1: widget.value,
+                                    color2: Colorz.white,
+                                  )
+                                      ? Colorz.black
+                                      : Colorz.white,
+                                  width: 2.0,
                                 ),
+                                borderRadius: BorderRadius.circular(6.0),
                               ),
-                            ],
-                          ),
-                        ],
+                              width: 24.0,
+                              height: 24.0,
+                            ),
+                            const SizedBox(height: 4.0),
+                            _colorSlider(
+                              value: widget.red,
+                              label: S.current.advancedColorRedLabel,
+                              onChange: (value) {
+                                widget.onChange?.call(Color.fromARGB(
+                                  255,
+                                  value,
+                                  widget.green,
+                                  widget.blue,
+                                ));
+                                OverlayUtils.rebuildAll();
+                              },
+                            ),
+                            _colorSlider(
+                              value: widget.green,
+                              label: S.current.advancedColorGreenLabel,
+                              onChange: (value) {
+                                widget.onChange?.call(Color.fromARGB(
+                                  255,
+                                  widget.red,
+                                  value,
+                                  widget.blue,
+                                ));
+                                OverlayUtils.rebuildAll();
+                              },
+                            ),
+                            _colorSlider(
+                              value: widget.blue,
+                              label: S.current.advancedColorBlueLabel,
+                              onChange: (value) {
+                                widget.onChange?.call(Color.fromARGB(
+                                  255,
+                                  widget.red,
+                                  widget.green,
+                                  value,
+                                ));
+                                OverlayUtils.rebuildAll();
+                              },
+                            ),
+                            const SizedBox(height: 4.0),
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.warning_amber_rounded,
+                                  size: 16.0,
+                                  color: Colorz.indianRed,
+                                ),
+                                const SizedBox(width: 8.0),
+                                Expanded(
+                                  child: Text(
+                                    S.current.advancedColorWarning,
+                                    style: TextStylez.regular14
+                                        .copyWith(color: Colorz.indianRed),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
-      );
-    });
-    Overlay.of(context).insert(_overlayEntry);
+            ],
+          ),
+        ));
     setState(() {
       _isExpanded = true;
     });
-    _ColorPicker._isExpanded = true;
   }
 
   void _dismissPicker() {
-    _overlayEntry.remove();
+    OverlayUtils.removeAll();
     setState(() {
       _isExpanded = false;
     });
-    _ColorPicker._isExpanded = false;
   }
 
   Widget _colorSlider({
@@ -234,10 +222,6 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
 
 class _ColorPicker extends StatelessWidget {
   const _ColorPicker();
-
-  static bool _isExpanded = false;
-
-  static get isExpanded => _isExpanded;
 
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(

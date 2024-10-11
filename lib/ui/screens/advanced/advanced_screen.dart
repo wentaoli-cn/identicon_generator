@@ -9,6 +9,7 @@ import 'package:identicon_generator/ui/res/style.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
 import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 import 'package:identicon_generator/ui/utils/color_utils.dart';
+import 'package:identicon_generator/ui/utils/overlay_utils.dart';
 
 part 'package:identicon_generator/ui/screens/advanced/widgets/color_picker.dart';
 
@@ -26,10 +27,8 @@ class AdvancedScreen extends StatelessWidget {
           if (didPop) {
             return;
           }
-          if (_HashFunctionPicker.isExpanded) {
-            return;
-          }
-          if (_ColorPicker.isExpanded) {
+          if (!OverlayUtils.isEmpty) {
+            OverlayUtils.removeAll();
             return;
           }
           context.pop();

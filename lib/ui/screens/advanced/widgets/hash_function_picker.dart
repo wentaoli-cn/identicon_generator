@@ -3,18 +3,12 @@ part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
 class _HashFunctionPicker extends StatefulWidget {
   const _HashFunctionPicker();
 
-  static bool _isExpanded = false;
-
-  static get isExpanded => _isExpanded;
-
   @override
   State<_HashFunctionPicker> createState() => _HashFunctionPickerState();
 }
 
 class _HashFunctionPickerState extends State<_HashFunctionPicker> {
   bool _isExpanded = false;
-  OverlayEntry _overlayEntry =
-      OverlayEntry(builder: (_) => const SizedBox.shrink());
 
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
@@ -65,22 +59,15 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
         ),
       );
 
-  @override
-  void dispose() {
-    _overlayEntry.remove();
-    _overlayEntry.dispose();
-    super.dispose();
-  }
-
   void _showMenu({required SupportedHashFunction selectedHashFunction}) {
     final anchor = context.findRenderObject() as RenderBox;
     final anchorSize = anchor.size;
     final location = anchor.localToGlobal(Offset.zero);
     final deviceSize = MediaQuery.of(context).size;
 
-    setState(
-      () {
-        _overlayEntry = OverlayEntry(
+    OverlayUtils.tryToShowOverlay(
+        context,
+        OverlayEntry(
           builder: (context) => Stack(
             children: [
               GestureDetector(
@@ -131,22 +118,17 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
               ),
             ],
           ),
-        );
-      },
-    );
-    Overlay.of(context).insert(_overlayEntry);
+        ));
     setState(() {
       _isExpanded = true;
     });
-    _HashFunctionPicker._isExpanded = true;
   }
 
   void _dismissMenu() {
-    _overlayEntry.remove();
+    OverlayUtils.removeAll();
     setState(() {
       _isExpanded = false;
     });
-    _HashFunctionPicker._isExpanded = false;
   }
 
   Widget _menuItem({
