@@ -9,6 +9,7 @@ class _PromptsTextField extends StatefulWidget {
 
 class _PromptsTextFieldState extends State<_PromptsTextField> {
   final _textController = TextEditingController();
+  final _focusNode = FocusNode();
 
   String get _text => _textController.text;
 
@@ -16,6 +17,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => TextField(
           controller: _textController,
+          focusNode: _focusNode,
           decoration: InputDecoration(
             hintText: S.current.homePromptsHint,
             hintStyle: TextStylez.regular16.copyWith(color: Colorz.darkGray),
@@ -63,7 +65,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
             context.read<IconBloc>().add(IconPromptsChanged(prompts: value));
           },
           onTapOutside: (_) {
-            FocusScope.of(context).unfocus();
+            _focusNode.unfocus();
           },
         ),
       );
@@ -71,6 +73,7 @@ class _PromptsTextFieldState extends State<_PromptsTextField> {
   @override
   void dispose() {
     _textController.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 }
