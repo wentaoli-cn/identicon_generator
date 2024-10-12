@@ -78,8 +78,8 @@ class _GridTypeSlider extends StatelessWidget {
           title: S.current.advancedGridTypeHelper,
           value: state.gridType,
           description: S.current.advancedGridTypeDescription(state.gridType),
-          min: IconState.gridTypeMin,
-          max: IconState.gridTypeMax,
+          min: IconState.minGridType,
+          max: IconState.maxGridType,
           onChange: (value) {
             context
                 .read<IconBloc>()
@@ -98,8 +98,8 @@ class _IconSizeSlider extends StatelessWidget {
           title: S.current.advancedSizeHelper,
           value: state.size,
           description: S.current.advancedSizeDescription(state.size),
-          min: IconState.sizeMin,
-          max: IconState.sizeMax,
+          min: IconState.minSize,
+          max: IconState.maxSize,
           onChange: (value) {
             final exponent =
                 (log(value) / log(IconState.sizeBase)).roundToDouble();
