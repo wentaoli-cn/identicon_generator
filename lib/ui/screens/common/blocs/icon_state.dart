@@ -18,8 +18,8 @@ final class IconState extends Equatable {
   static const gridTypeMax = 12.0;
   static const sizeBase = 2.0;
   static const sizeMin = 32.0;
-  static const defaultSize = 128.0;
-  static const sizeMax = 512.0;
+  static const defaultSize = 512.0;
+  static const sizeMax = 1024.0;
   static const defaultPixelColor = Colorz.cornflowerBlue;
   static const defaultBackgroundColor = Colorz.white;
 
