@@ -17,7 +17,7 @@ final class IconHashFunctionChanged extends IconEvent {
 final class IconGridTypeChanged extends IconEvent {
   IconGridTypeChanged({required this.gridType});
 
-  final double gridType;
+  final int gridType;
 }
 
 final class IconSizeChanged extends IconEvent {

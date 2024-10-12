@@ -21,12 +21,6 @@ class IconBloc extends Bloc<IconEvent, IconState> {
     Emitter<IconState> emit,
   ) async {
     emit(state.copyWith(prompts: event.prompts));
-    // TODO: Implement it.
-    // Example:
-    // import 'dart:convert';
-    // import 'package:crypto/crypto.dart';
-    // final bytes = utf8.encode(event.prompts);
-    // md5.convert(bytes);
   }
 
   Future<void> _onHashFunctionChanged(

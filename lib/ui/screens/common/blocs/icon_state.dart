@@ -13,9 +13,9 @@ final class IconState extends Equatable {
     ),
   });
 
-  static const minGridType = 3.0;
-  static const defaultGridType = 5.0;
-  static const maxGridType = 12.0;
+  static const minGridType = 3;
+  static const defaultGridType = 5;
+  static const maxGridType = 12;
   static const sizeBase = 2.0;
   static const minSize = 32.0;
   static const defaultSize = 512.0;
@@ -25,7 +25,7 @@ final class IconState extends Equatable {
 
   final String prompts;
   final SupportedHashFunction hashFunction;
-  final double gridType;
+  final int gridType;
   final double size;
   final bool useRandomColors;
   final IconColor colors;
@@ -43,7 +43,7 @@ final class IconState extends Equatable {
   IconState copyWith({
     String? prompts,
     SupportedHashFunction? hashFunction,
-    double? gridType,
+    int? gridType,
     double? size,
     bool? useRandomColors,
     IconColor? colors,
@@ -60,13 +60,13 @@ final class IconState extends Equatable {
 
 enum SupportedHashFunction {
   md5(name: 'MD5'),
-  sha1(name: 'SHA-1'),
-  sha224(name: 'SHA-224'),
-  sha256(name: 'SHA-256'),
-  sha384(name: 'SHA-384'),
-  sha512(name: 'SHA-512'),
-  adler32(name: 'Adler-32'),
-  crc32(name: 'CRC-32');
+  sha1(name: 'SHA1'),
+  sha224(name: 'SHA224'),
+  sha256(name: 'SHA256'),
+  sha384(name: 'SHA384'),
+  sha512(name: 'SHA512'),
+  hmacMd5(name: 'HMAC-MD5'),
+  hmacSha256(name: 'HMAC-SHA256');
 
   const SupportedHashFunction({required this.name});
 

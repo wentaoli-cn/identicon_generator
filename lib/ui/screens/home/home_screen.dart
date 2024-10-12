@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -8,7 +11,10 @@ import 'package:identicon_generator/ui/res/style.dart';
 import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 
 part 'package:identicon_generator/ui/screens/home/widgets/advanced_button.dart';
+
 part 'package:identicon_generator/ui/screens/home/widgets/prompts_text_field.dart';
+
+part 'package:identicon_generator/ui/screens/home/widgets/icon_showcase.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -48,6 +54,8 @@ class _Body extends StatelessWidget {
           _PromptsTextField(),
           SizedBox(height: 8.0),
           _AdvancedButton(),
+          SizedBox(height: 8.0),
+          _IconShowcase(),
           // TODO: Implement it.
         ],
       );

@@ -76,14 +76,15 @@ class _GridTypeSlider extends StatelessWidget {
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
           title: S.current.advancedGridTypeHelper,
-          value: state.gridType,
-          description: S.current.advancedGridTypeDescription(state.gridType),
-          min: IconState.minGridType,
-          max: IconState.maxGridType,
+          value: state.gridType.toDouble(),
+          description:
+              S.current.advancedGridTypeDescription(state.gridType.toDouble()),
+          min: IconState.minGridType.toDouble(),
+          max: IconState.maxGridType.toDouble(),
           onChange: (value) {
             context
                 .read<IconBloc>()
-                .add(IconGridTypeChanged(gridType: value.roundToDouble()));
+                .add(IconGridTypeChanged(gridType: value.round()));
           },
         ),
       );
