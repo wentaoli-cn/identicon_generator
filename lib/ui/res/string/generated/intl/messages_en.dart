@@ -28,7 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(value) => "${value} × ${value}";
 
-  static String m4(value) => "${value} px";
+  static String m4(value) => "${value} %";
+
+  static String m5(value) => "${value} px";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -46,11 +48,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Grid type"),
         "advancedHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("Hash function"),
+        "advancedMarginDescription": m4,
+        "advancedMarginHelper":
+            MessageLookupByLibrary.simpleMessage("Margin ratio"),
         "advancedPixelColorLabel":
             MessageLookupByLibrary.simpleMessage("Pixel color"),
         "advancedRandomColorsLabel":
             MessageLookupByLibrary.simpleMessage("Random color?"),
-        "advancedSizeDescription": m4,
+        "advancedSizeDescription": m5,
         "advancedSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
         "advancedTitle": MessageLookupByLibrary.simpleMessage("Advanced"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),

@@ -19,5 +19,7 @@
   "advancedColorGreenLabel": "绿 - {value}",
   "advancedColorBlueLabel": "蓝 - {value}",
   "advancedColorWarning": "填充色和背景色不能太过相似（或是相同）以便于区分。",
-  "advancedColorHashLabel": "#"
+  "advancedColorHashLabel": "#",
+  "advancedMarginHelper": "生成的 Identicon 的边框占比",
+  "advancedMarginDescription": "{value} %"
 }

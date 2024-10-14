@@ -11,6 +11,7 @@ final class IconState extends Equatable {
       pixelColor: defaultPixelColor,
       backgroundColor: defaultBackgroundColor,
     ),
+    this.marginRatio = defaultMarginRatio,
   });
 
   static const minGridType = 4;
@@ -22,6 +23,9 @@ final class IconState extends Equatable {
   static const maxSize = 1024.0;
   static const defaultPixelColor = Colorz.cornflowerBlue;
   static const defaultBackgroundColor = Colorz.white;
+  static const minMarginRatio = 0.0;
+  static const defaultMarginRatio = 20.0;
+  static const maxMarginRatio = 60.0;
 
   final String prompts;
   final SupportedHashFunction hashFunction;
@@ -29,6 +33,7 @@ final class IconState extends Equatable {
   final double size;
   final bool useRandomColors;
   final IconColor colors;
+  final double marginRatio;
 
   @override
   List<Object?> get props => [
@@ -38,6 +43,7 @@ final class IconState extends Equatable {
         size,
         useRandomColors,
         colors,
+        marginRatio,
       ];
 
   IconState copyWith({
@@ -47,6 +53,7 @@ final class IconState extends Equatable {
     double? size,
     bool? useRandomColors,
     IconColor? colors,
+    double? marginRatio,
   }) =>
       IconState(
         prompts: prompts ?? this.prompts,
@@ -55,6 +62,7 @@ final class IconState extends Equatable {
         size: size ?? this.size,
         useRandomColors: useRandomColors ?? this.useRandomColors,
         colors: colors ?? this.colors,
+        marginRatio: marginRatio ?? this.marginRatio,
       );
 }
 

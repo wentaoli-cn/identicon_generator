@@ -111,3 +111,22 @@ class _IconSizeSlider extends StatelessWidget {
         ),
       );
 }
+
+class _MarginRatioSlider extends StatelessWidget {
+  const _MarginRatioSlider();
+
+  @override
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
+        builder: (context, state) => _Slider(
+          title: S.current.advancedMarginHelper,
+          value: state.marginRatio,
+          description: S.current.advancedMarginDescription(state.marginRatio),
+          min: IconState.minMarginRatio,
+          max: IconState.maxMarginRatio,
+          onChange: (value) {
+            context.read<IconBloc>().add(
+                IconMarginRatioChanged(marginRatio: value.roundToDouble()));
+          },
+        ),
+      );
+}

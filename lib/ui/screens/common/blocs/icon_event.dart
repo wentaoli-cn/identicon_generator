@@ -32,3 +32,9 @@ final class IconColorChanged extends IconEvent {
   final bool useRandomColors;
   final IconColor colors;
 }
+
+final class IconMarginRatioChanged extends IconEvent {
+  IconMarginRatioChanged({required this.marginRatio});
+
+  final double marginRatio;
+}

@@ -74,12 +74,13 @@ class _Body extends StatelessWidget {
         children: const [
           _HashFunctionPicker(),
           SizedBox(height: 8.0),
+          _ColorPicker(),
+          SizedBox(height: 8.0),
           _GridTypeSlider(),
           SizedBox(height: 8.0),
           _IconSizeSlider(),
           SizedBox(height: 8.0),
-          _ColorPicker(),
-          // TODO: Implement it.
+          _MarginRatioSlider(),
         ],
       );
 }

@@ -46,11 +46,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
                 ],
               ),
             ),
-            Divider(
-              height: 1.0,
-              thickness: 1.0,
-              color: _isExpanded ? Colorz.white : Colorz.darkGray,
-            ),
+            const Divider(height: 1.0, thickness: 1.0, color: Colorz.darkGray),
           ],
         ),
       );

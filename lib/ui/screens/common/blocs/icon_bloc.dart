@@ -14,6 +14,7 @@ class IconBloc extends Bloc<IconEvent, IconState> {
     on<IconGridTypeChanged>(_onGridTypeChanged);
     on<IconSizeChanged>(_onSizeChanged);
     on<IconColorChanged>(_onColorChanged);
+    on<IconMarginRatioChanged>(_onMarginRatioChanged);
   }
 
   Future<void> _onPromptsChanged(
@@ -52,5 +53,12 @@ class IconBloc extends Bloc<IconEvent, IconState> {
       useRandomColors: event.useRandomColors,
       colors: event.colors,
     ));
+  }
+
+  Future<void> _onMarginRatioChanged(
+    IconMarginRatioChanged event,
+    Emitter<IconState> emit,
+  ) async {
+    emit(state.copyWith(marginRatio: event.marginRatio));
   }
 }

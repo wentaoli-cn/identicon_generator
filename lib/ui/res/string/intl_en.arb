@@ -19,5 +19,7 @@
   "advancedColorGreenLabel": "G - {value}",
   "advancedColorBlueLabel": "B - {value}",
   "advancedColorWarning": "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.",
-  "advancedColorHashLabel": "#"
+  "advancedColorHashLabel": "#",
+  "advancedMarginHelper": "Margin ratio",
+  "advancedMarginDescription": "{value} %"
 }

@@ -249,6 +249,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Margin ratio`
+  String get advancedMarginHelper {
+    return Intl.message(
+      'Margin ratio',
+      name: 'advancedMarginHelper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} %`
+  String advancedMarginDescription(Object value) {
+    return Intl.message(
+      '$value %',
+      name: 'advancedMarginDescription',
+      desc: '',
+      args: [value],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

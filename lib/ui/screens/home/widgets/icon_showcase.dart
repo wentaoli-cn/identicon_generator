@@ -23,6 +23,7 @@ class _IconShowcase extends StatelessWidget {
                           gridType: state.gridType,
                           useRandomColors: state.useRandomColors,
                           colors: state.colors,
+                          marginRatio: state.marginRatio,
                         ),
                         size: Size.square(state.size /
                             MediaQuery.of(context).devicePixelRatio),
@@ -63,16 +64,25 @@ class _IconPainter extends CustomPainter {
     required this.gridType,
     required this.useRandomColors,
     required this.colors,
+    required this.marginRatio,
   });
 
   final BigInt code;
   final int gridType;
   final bool useRandomColors;
   final IconColor colors;
+  final double marginRatio;
 
   @override
   void paint(Canvas canvas, Size size) {
-    final gridSize = size.width / gridType;
+    double gridSize;
+    double margin = 0.0;
+    if (marginRatio == 0.0) {
+      gridSize = size.width / gridType;
+    } else {
+      margin = size.width * (marginRatio / 100) / 2;
+      gridSize = (size.width - margin * 2) / gridType;
+    }
 
     final backgroundPaint = Paint()..color = colors.backgroundColor;
     canvas.drawRect(
@@ -103,8 +113,8 @@ class _IconPainter extends CustomPainter {
         if (shouldPaint) {
           canvas.drawRect(
             Rect.fromLTWH(
-              x * gridSize,
-              y * gridSize,
+              x * gridSize + margin,
+              y * gridSize + margin,
               gridSize,
               gridSize,
             ),
@@ -112,8 +122,8 @@ class _IconPainter extends CustomPainter {
           );
           canvas.drawRect(
             Rect.fromLTWH(
-              (gridType - 1 - x) * gridSize,
-              y * gridSize,
+              (gridType - 1 - x) * gridSize + margin,
+              y * gridSize + margin,
               gridSize,
               gridSize,
             ),

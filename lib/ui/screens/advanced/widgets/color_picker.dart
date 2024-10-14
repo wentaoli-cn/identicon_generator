@@ -97,7 +97,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
             ),
             Positioned(
               left: 12.0,
-              top: location.dy + anchorSize.height + 4.0,
+              top: location.dy + anchorSize.height + 12.0,
               right: 12.0,
               child: Material(
                 color: Colorz.transparent,
@@ -370,6 +370,8 @@ class _ColorPicker extends StatelessWidget {
                 ],
               ),
             ],
+            const SizedBox(height: 8.0),
+            const Divider(height: 1.0, thickness: 1.0, color: Colorz.darkGray),
           ],
         ),
       );

@@ -28,7 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(value) => "${value} × ${value}";
 
-  static String m4(value) => "${value} px";
+  static String m4(value) => "${value} %";
+
+  static String m5(value) => "${value} px";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,10 +49,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
         "advancedHashFunctionHelper":
             MessageLookupByLibrary.simpleMessage("生成 Identicon 的哈希算法"),
+        "advancedMarginDescription": m4,
+        "advancedMarginHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的边框占比"),
         "advancedPixelColorLabel": MessageLookupByLibrary.simpleMessage("填充色"),
         "advancedRandomColorsLabel":
             MessageLookupByLibrary.simpleMessage("使用随机颜色？"),
-        "advancedSizeDescription": m4,
+        "advancedSizeDescription": m5,
         "advancedSizeHelper":
             MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),
         "advancedTitle": MessageLookupByLibrary.simpleMessage("高级选项"),
