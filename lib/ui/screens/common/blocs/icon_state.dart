@@ -13,9 +13,9 @@ final class IconState extends Equatable {
     ),
   });
 
-  static const minGridType = 3;
-  static const defaultGridType = 5;
-  static const maxGridType = 12;
+  static const minGridType = 4;
+  static const defaultGridType = 8;
+  static const maxGridType = 16;
   static const sizeBase = 2.0;
   static const minSize = 32.0;
   static const defaultSize = 512.0;
