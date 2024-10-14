@@ -1,5 +1,7 @@
 part of 'package:identicon_generator/ui/screens/home/home_screen.dart';
 
+final _iconKey = GlobalKey();
+
 class _IconShowcase extends StatelessWidget {
   const _IconShowcase();
 
@@ -14,19 +16,22 @@ class _IconShowcase extends StatelessWidget {
                     width: MediaQuery.of(context).size.width - 12.0 * 2,
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
-                      child: CustomPaint(
-                        painter: _IconPainter(
-                          code: _generateHashCode(
-                            input: state.prompts,
-                            hashFunction: state.hashFunction,
+                      child: RepaintBoundary(
+                        key: _iconKey,
+                        child: CustomPaint(
+                          painter: _IconPainter(
+                            code: _generateHashCode(
+                              input: state.prompts,
+                              hashFunction: state.hashFunction,
+                            ),
+                            gridType: state.gridType,
+                            useRandomColors: state.useRandomColors,
+                            colors: state.colors,
+                            marginRatio: state.marginRatio,
                           ),
-                          gridType: state.gridType,
-                          useRandomColors: state.useRandomColors,
-                          colors: state.colors,
-                          marginRatio: state.marginRatio,
+                          size: Size.square(state.size /
+                              MediaQuery.of(context).devicePixelRatio),
                         ),
-                        size: Size.square(state.size /
-                            MediaQuery.of(context).devicePixelRatio),
                       ),
                     ),
                   ),

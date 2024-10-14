@@ -65,6 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Do not use sensitive information, your identicon may reveal it."),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage(
             "Please enter your prompts here."),
+        "homeSavedIconName": MessageLookupByLibrary.simpleMessage("identicon"),
+        "homeSavedSnackBarActionText":
+            MessageLookupByLibrary.simpleMessage("Gallery"),
+        "homeSavedSnackBarText": MessageLookupByLibrary.simpleMessage("Saved!"),
         "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon Generator")
       };
 }

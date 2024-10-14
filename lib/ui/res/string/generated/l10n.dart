@@ -100,6 +100,36 @@ class S {
     );
   }
 
+  /// `Saved!`
+  String get homeSavedSnackBarText {
+    return Intl.message(
+      'Saved!',
+      name: 'homeSavedSnackBarText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get homeSavedSnackBarActionText {
+    return Intl.message(
+      'Gallery',
+      name: 'homeSavedSnackBarActionText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `identicon`
+  String get homeSavedIconName {
+    return Intl.message(
+      'identicon',
+      name: 'homeSavedIconName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Advanced`
   String get advancedTitle {
     return Intl.message(

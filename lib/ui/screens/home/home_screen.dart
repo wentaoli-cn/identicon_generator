@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gal/gal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/res/color.dart';
 import 'package:identicon_generator/ui/res/route.dart';
@@ -23,6 +26,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) => const Scaffold(
         appBar: _AppBar(),
         body: _Body(),
+        floatingActionButton: _FloatingActionButton(),
       );
 }
 
@@ -56,7 +60,51 @@ class _Body extends StatelessWidget {
           _AdvancedButton(),
           SizedBox(height: 8.0),
           _IconShowcase(),
-          // TODO: Implement it.
         ],
+      );
+}
+
+class _FloatingActionButton extends StatelessWidget {
+  const _FloatingActionButton();
+
+  @override
+  Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
+        builder: (context, state) => state.prompts.isEmpty
+            ? const SizedBox.shrink()
+            : FloatingActionButton.small(
+                onPressed: () async {
+                  final boundary = _iconKey.currentContext?.findRenderObject()
+                      as RenderRepaintBoundary;
+                  final image = await boundary.toImage(
+                    pixelRatio: MediaQuery.of(context).devicePixelRatio,
+                  );
+                  final byteData =
+                      await image.toByteData(format: ImageByteFormat.png);
+                  final uint8List = byteData?.buffer.asUint8List();
+                  if (uint8List != null) {
+                    await Gal.putImageBytes(
+                      uint8List,
+                      name: S.current.homeSavedIconName,
+                    );
+                  }
+
+                  final currentContext = _iconKey.currentContext;
+                  if (currentContext != null && currentContext.mounted) {
+                    ScaffoldMessenger.of(currentContext).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          S.current.homeSavedSnackBarText,
+                          style: TextStylez.regular16,
+                        ),
+                        action: SnackBarAction(
+                          label: S.current.homeSavedSnackBarActionText,
+                          onPressed: () async => Gal.open(),
+                        ),
+                      ),
+                    );
+                  }
+                },
+                child: const Icon(Icons.save_alt_rounded, color: Colorz.black),
+              ),
       );
 }

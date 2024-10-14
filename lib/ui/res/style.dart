@@ -37,6 +37,10 @@ class TextStylez {
 final appTheme = ThemeData(
   scaffoldBackgroundColor: Colorz.black,
   fontFamily: Fontz.ubuntuMono.name,
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: Colorz.white,
+    elevation: 0.0,
+  ),
   sliderTheme: SliderThemeData(
     overlayShape: SliderComponentShape.noOverlay,
   ),

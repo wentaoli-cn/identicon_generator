@@ -65,6 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "请勿使用敏感信息, 你的 Identicon 可能会泄露它。"),
         "homePromptsHint":
             MessageLookupByLibrary.simpleMessage("请在此输入用于生成 Identicon 的信息。"),
+        "homeSavedIconName": MessageLookupByLibrary.simpleMessage("identicon"),
+        "homeSavedSnackBarActionText":
+            MessageLookupByLibrary.simpleMessage("跳转至相册"),
+        "homeSavedSnackBarText": MessageLookupByLibrary.simpleMessage("已保存！"),
         "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon 生成器")
       };
 }
