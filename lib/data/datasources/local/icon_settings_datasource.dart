@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
+import 'package:identicon_generator/ui/screens/common/blocs/icon/icon_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class IconSettingsDataSource {

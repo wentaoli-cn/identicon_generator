@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:identicon_generator/domain/usecase_provider.dart';
 import 'package:identicon_generator/ui/res/color.dart';
 
-part 'package:identicon_generator/ui/screens/common/blocs/icon_event.dart';
-part 'package:identicon_generator/ui/screens/common/blocs/icon_state.dart';
+part 'package:identicon_generator/ui/screens/common/blocs/icon/icon_event.dart';
+part 'package:identicon_generator/ui/screens/common/blocs/icon/icon_state.dart';
 
 class IconBloc extends Bloc<IconEvent, IconState> {
   IconBloc() : super(const IconState()) {

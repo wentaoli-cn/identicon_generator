@@ -6,7 +6,7 @@ import 'package:identicon_generator/ui/res/color.dart';
 import 'package:identicon_generator/ui/res/route.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
 import 'package:identicon_generator/ui/res/style.dart';
-import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
+import 'package:identicon_generator/ui/screens/common/blocs/icon/icon_bloc.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

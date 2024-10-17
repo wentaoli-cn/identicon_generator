@@ -7,7 +7,7 @@ import 'package:identicon_generator/ui/res/color.dart';
 import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/res/style.dart';
 import 'package:identicon_generator/ui/res/string/generated/l10n.dart';
-import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
+import 'package:identicon_generator/ui/screens/common/blocs/icon/icon_bloc.dart';
 import 'package:identicon_generator/ui/utils/color_utils.dart';
 import 'package:identicon_generator/ui/utils/overlay_utils.dart';
 
