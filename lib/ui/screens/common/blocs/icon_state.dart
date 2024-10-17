@@ -14,6 +14,19 @@ final class IconState extends Equatable {
     this.marginRatio = defaultMarginRatio,
   });
 
+  factory IconState.fromJson(Map<String, dynamic> json) => IconState(
+        hashFunction:
+            SupportedHashFunction.values.toList()[json[hashFunctionKey] as int],
+        gridType: json[gridTypeKey] as int,
+        size: json[sizeKey] as double,
+        useRandomColors: json[useRandomColorsKey] as bool,
+        colors: IconColor(
+          pixelColor: Color(json[pixelColorKey] as int),
+          backgroundColor: Color(json[backgroundColorKey] as int),
+        ),
+        marginRatio: json[marginRatioKey] as double,
+      );
+
   static const minGridType = 4;
   static const defaultGridType = 8;
   static const maxGridType = 16;
@@ -26,6 +39,13 @@ final class IconState extends Equatable {
   static const minMarginRatio = 0.0;
   static const defaultMarginRatio = 20.0;
   static const maxMarginRatio = 60.0;
+  static const hashFunctionKey = 'hash function';
+  static const gridTypeKey = 'grid type';
+  static const sizeKey = 'size';
+  static const useRandomColorsKey = 'use random colors';
+  static const pixelColorKey = 'pixel color';
+  static const backgroundColorKey = 'background color';
+  static const marginRatioKey = 'margin ratio';
 
   final String prompts;
   final SupportedHashFunction hashFunction;
@@ -64,6 +84,16 @@ final class IconState extends Equatable {
         colors: colors ?? this.colors,
         marginRatio: marginRatio ?? this.marginRatio,
       );
+
+  Map<String, dynamic> toJson() => {
+        hashFunctionKey: hashFunction.index,
+        gridTypeKey: gridType,
+        sizeKey: size,
+        useRandomColorsKey: useRandomColors,
+        pixelColorKey: colors.pixelColor.value,
+        backgroundColorKey: colors.backgroundColor.value,
+        marginRatioKey: marginRatio,
+      };
 }
 
 enum SupportedHashFunction {

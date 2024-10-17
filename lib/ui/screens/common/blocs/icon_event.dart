@@ -2,6 +2,8 @@ part of 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 
 sealed class IconEvent {}
 
+final class IconSettingsInitialized extends IconEvent {}
+
 final class IconPromptsChanged extends IconEvent {
   IconPromptsChanged({required this.prompts});
 

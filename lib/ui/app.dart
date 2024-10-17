@@ -16,7 +16,7 @@ class App extends StatelessWidget {
     _initApp();
 
     return BlocProvider(
-      create: (_) => IconBloc(),
+      create: (_) => IconBloc()..add(IconSettingsInitialized()),
       child: MaterialApp.router(
         routerConfig: router,
         theme: appTheme,
