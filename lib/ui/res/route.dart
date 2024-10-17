@@ -1,12 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:identicon_generator/ui/screens/home/home_screen.dart';
-import 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
+import 'package:identicon_generator/ui/screens/settings/settings_screen.dart';
 import 'package:identicon_generator/ui/screens/splash/splash_screen.dart';
 
 enum Routez {
   splash(path: '/'),
   home(path: '/home'),
-  advanced(path: '/advanced');
+  settings(path: '/settings');
 
   const Routez({required this.path});
 
@@ -24,8 +24,8 @@ final router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: Routez.advanced.path,
-      builder: (context, state) => const AdvancedScreen(),
+      path: Routez.settings.path,
+      builder: (context, state) => const SettingsScreen(),
     ),
   ],
   initialLocation: Routez.splash.path,

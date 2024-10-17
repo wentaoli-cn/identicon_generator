@@ -1,4 +1,4 @@
-part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
+part of 'package:identicon_generator/ui/screens/settings/settings_screen.dart';
 
 class _HashFunctionPicker extends StatefulWidget {
   const _HashFunctionPicker();
@@ -17,7 +17,7 @@ class _HashFunctionPickerState extends State<_HashFunctionPicker> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              S.current.advancedHashFunctionHelper,
+              S.current.settingsHashFunctionHelper,
               style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
             ),
             GestureDetector(

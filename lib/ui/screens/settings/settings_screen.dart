@@ -11,14 +11,12 @@ import 'package:identicon_generator/ui/screens/common/blocs/icon_bloc.dart';
 import 'package:identicon_generator/ui/utils/color_utils.dart';
 import 'package:identicon_generator/ui/utils/overlay_utils.dart';
 
-part 'package:identicon_generator/ui/screens/advanced/widgets/color_picker.dart';
+part 'package:identicon_generator/ui/screens/settings/widgets/color_picker.dart';
+part 'package:identicon_generator/ui/screens/settings/widgets/hash_function_picker.dart';
+part 'package:identicon_generator/ui/screens/settings/widgets/slider.dart';
 
-part 'package:identicon_generator/ui/screens/advanced/widgets/hash_function_picker.dart';
-
-part 'package:identicon_generator/ui/screens/advanced/widgets/slider.dart';
-
-class AdvancedScreen extends StatelessWidget {
-  const AdvancedScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) => PopScope(
@@ -55,7 +53,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             color: Colorz.white,
           ),
         ),
-        title: Text(S.current.advancedTitle, style: TextStylez.bold20),
+        title: Text(S.current.settingsTitle, style: TextStylez.bold20),
         elevation: 0.0,
         backgroundColor: Colorz.transparent,
       );

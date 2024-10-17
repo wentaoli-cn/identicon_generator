@@ -34,33 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "advancedBackgroundColorLabel":
-            MessageLookupByLibrary.simpleMessage("Background color"),
-        "advancedColorBlueLabel": m0,
-        "advancedColorGreenLabel": m1,
-        "advancedColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
-        "advancedColorHelper": MessageLookupByLibrary.simpleMessage("Color"),
-        "advancedColorRedLabel": m2,
-        "advancedColorWarning": MessageLookupByLibrary.simpleMessage(
-            "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily."),
-        "advancedGridTypeDescription": m3,
-        "advancedGridTypeHelper":
-            MessageLookupByLibrary.simpleMessage("Grid type"),
-        "advancedHashFunctionHelper":
-            MessageLookupByLibrary.simpleMessage("Hash function"),
-        "advancedMarginDescription": m4,
-        "advancedMarginHelper":
-            MessageLookupByLibrary.simpleMessage("Margin ratio"),
-        "advancedPixelColorLabel":
-            MessageLookupByLibrary.simpleMessage("Pixel color"),
-        "advancedRandomColorsLabel":
-            MessageLookupByLibrary.simpleMessage("Random color?"),
-        "advancedSizeDescription": m5,
-        "advancedSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
-        "advancedTitle": MessageLookupByLibrary.simpleMessage("Advanced"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon Generator"),
-        "homeAdvancedButtonText":
-            MessageLookupByLibrary.simpleMessage("Advanced"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "Do not use sensitive information, your identicon may reveal it."),
         "homePromptsHint": MessageLookupByLibrary.simpleMessage(
@@ -69,6 +43,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeSavedSnackBarActionText":
             MessageLookupByLibrary.simpleMessage("Gallery"),
         "homeSavedSnackBarText": MessageLookupByLibrary.simpleMessage("Saved!"),
-        "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon Generator")
+        "homeSettingsButtonText":
+            MessageLookupByLibrary.simpleMessage("Settings"),
+        "homeTitle":
+            MessageLookupByLibrary.simpleMessage("Identicon Generator"),
+        "settingsBackgroundColorLabel":
+            MessageLookupByLibrary.simpleMessage("Background color"),
+        "settingsColorBlueLabel": m0,
+        "settingsColorGreenLabel": m1,
+        "settingsColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
+        "settingsColorHelper": MessageLookupByLibrary.simpleMessage("Color"),
+        "settingsColorRedLabel": m2,
+        "settingsColorWarning": MessageLookupByLibrary.simpleMessage(
+            "Pixel color and background color should not be too similar (or the same) in order to distinguish them easily."),
+        "settingsGridTypeDescription": m3,
+        "settingsGridTypeHelper":
+            MessageLookupByLibrary.simpleMessage("Grid type"),
+        "settingsHashFunctionHelper":
+            MessageLookupByLibrary.simpleMessage("Hash function"),
+        "settingsMarginDescription": m4,
+        "settingsMarginHelper":
+            MessageLookupByLibrary.simpleMessage("Margin ratio"),
+        "settingsPixelColorLabel":
+            MessageLookupByLibrary.simpleMessage("Pixel color"),
+        "settingsRandomColorsLabel":
+            MessageLookupByLibrary.simpleMessage("Random color?"),
+        "settingsSizeDescription": m5,
+        "settingsSizeHelper": MessageLookupByLibrary.simpleMessage("Size"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings")
       };
 }

@@ -90,11 +90,11 @@ class S {
     );
   }
 
-  /// `Advanced`
-  String get homeAdvancedButtonText {
+  /// `Settings`
+  String get homeSettingsButtonText {
     return Intl.message(
-      'Advanced',
-      name: 'homeAdvancedButtonText',
+      'Settings',
+      name: 'homeSettingsButtonText',
       desc: '',
       args: [],
     );
@@ -130,171 +130,171 @@ class S {
     );
   }
 
-  /// `Advanced`
-  String get advancedTitle {
+  /// `Settings`
+  String get settingsTitle {
     return Intl.message(
-      'Advanced',
-      name: 'advancedTitle',
+      'Settings',
+      name: 'settingsTitle',
       desc: '',
       args: [],
     );
   }
 
   /// `Hash function`
-  String get advancedHashFunctionHelper {
+  String get settingsHashFunctionHelper {
     return Intl.message(
       'Hash function',
-      name: 'advancedHashFunctionHelper',
+      name: 'settingsHashFunctionHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `Grid type`
-  String get advancedGridTypeHelper {
+  String get settingsGridTypeHelper {
     return Intl.message(
       'Grid type',
-      name: 'advancedGridTypeHelper',
+      name: 'settingsGridTypeHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `{value} × {value}`
-  String advancedGridTypeDescription(Object value) {
+  String settingsGridTypeDescription(Object value) {
     return Intl.message(
       '$value × $value',
-      name: 'advancedGridTypeDescription',
+      name: 'settingsGridTypeDescription',
       desc: '',
       args: [value],
     );
   }
 
   /// `Size`
-  String get advancedSizeHelper {
+  String get settingsSizeHelper {
     return Intl.message(
       'Size',
-      name: 'advancedSizeHelper',
+      name: 'settingsSizeHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `{value} px`
-  String advancedSizeDescription(Object value) {
+  String settingsSizeDescription(Object value) {
     return Intl.message(
       '$value px',
-      name: 'advancedSizeDescription',
+      name: 'settingsSizeDescription',
       desc: '',
       args: [value],
     );
   }
 
   /// `Color`
-  String get advancedColorHelper {
+  String get settingsColorHelper {
     return Intl.message(
       'Color',
-      name: 'advancedColorHelper',
+      name: 'settingsColorHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `Random color?`
-  String get advancedRandomColorsLabel {
+  String get settingsRandomColorsLabel {
     return Intl.message(
       'Random color?',
-      name: 'advancedRandomColorsLabel',
+      name: 'settingsRandomColorsLabel',
       desc: '',
       args: [],
     );
   }
 
   /// `Pixel color`
-  String get advancedPixelColorLabel {
+  String get settingsPixelColorLabel {
     return Intl.message(
       'Pixel color',
-      name: 'advancedPixelColorLabel',
+      name: 'settingsPixelColorLabel',
       desc: '',
       args: [],
     );
   }
 
   /// `Background color`
-  String get advancedBackgroundColorLabel {
+  String get settingsBackgroundColorLabel {
     return Intl.message(
       'Background color',
-      name: 'advancedBackgroundColorLabel',
+      name: 'settingsBackgroundColorLabel',
       desc: '',
       args: [],
     );
   }
 
   /// `R - {value}`
-  String advancedColorRedLabel(Object value) {
+  String settingsColorRedLabel(Object value) {
     return Intl.message(
       'R - $value',
-      name: 'advancedColorRedLabel',
+      name: 'settingsColorRedLabel',
       desc: '',
       args: [value],
     );
   }
 
   /// `G - {value}`
-  String advancedColorGreenLabel(Object value) {
+  String settingsColorGreenLabel(Object value) {
     return Intl.message(
       'G - $value',
-      name: 'advancedColorGreenLabel',
+      name: 'settingsColorGreenLabel',
       desc: '',
       args: [value],
     );
   }
 
   /// `B - {value}`
-  String advancedColorBlueLabel(Object value) {
+  String settingsColorBlueLabel(Object value) {
     return Intl.message(
       'B - $value',
-      name: 'advancedColorBlueLabel',
+      name: 'settingsColorBlueLabel',
       desc: '',
       args: [value],
     );
   }
 
   /// `Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.`
-  String get advancedColorWarning {
+  String get settingsColorWarning {
     return Intl.message(
       'Pixel color and background color should not be too similar (or the same) in order to distinguish them easily.',
-      name: 'advancedColorWarning',
+      name: 'settingsColorWarning',
       desc: '',
       args: [],
     );
   }
 
   /// `#`
-  String get advancedColorHashLabel {
+  String get settingsColorHashLabel {
     return Intl.message(
       '#',
-      name: 'advancedColorHashLabel',
+      name: 'settingsColorHashLabel',
       desc: '',
       args: [],
     );
   }
 
   /// `Margin ratio`
-  String get advancedMarginHelper {
+  String get settingsMarginHelper {
     return Intl.message(
       'Margin ratio',
-      name: 'advancedMarginHelper',
+      name: 'settingsMarginHelper',
       desc: '',
       args: [],
     );
   }
 
   /// `{value} %`
-  String advancedMarginDescription(Object value) {
+  String settingsMarginDescription(Object value) {
     return Intl.message(
       '$value %',
-      name: 'advancedMarginDescription',
+      name: 'settingsMarginDescription',
       desc: '',
       args: [value],
     );

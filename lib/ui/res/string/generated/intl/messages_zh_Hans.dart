@@ -34,33 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "advancedBackgroundColorLabel":
-            MessageLookupByLibrary.simpleMessage("背景色"),
-        "advancedColorBlueLabel": m0,
-        "advancedColorGreenLabel": m1,
-        "advancedColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
-        "advancedColorHelper":
-            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的颜色"),
-        "advancedColorRedLabel": m2,
-        "advancedColorWarning":
-            MessageLookupByLibrary.simpleMessage("填充色和背景色不能太过相似（或是相同）以便于区分。"),
-        "advancedGridTypeDescription": m3,
-        "advancedGridTypeHelper":
-            MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
-        "advancedHashFunctionHelper":
-            MessageLookupByLibrary.simpleMessage("生成 Identicon 的哈希算法"),
-        "advancedMarginDescription": m4,
-        "advancedMarginHelper":
-            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的边框占比"),
-        "advancedPixelColorLabel": MessageLookupByLibrary.simpleMessage("填充色"),
-        "advancedRandomColorsLabel":
-            MessageLookupByLibrary.simpleMessage("使用随机颜色？"),
-        "advancedSizeDescription": m5,
-        "advancedSizeHelper":
-            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),
-        "advancedTitle": MessageLookupByLibrary.simpleMessage("高级选项"),
         "appName": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
-        "homeAdvancedButtonText": MessageLookupByLibrary.simpleMessage("高级选项"),
         "homePromptsHelper": MessageLookupByLibrary.simpleMessage(
             "请勿使用敏感信息, 你的 Identicon 可能会泄露它。"),
         "homePromptsHint":
@@ -69,6 +43,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeSavedSnackBarActionText":
             MessageLookupByLibrary.simpleMessage("跳转至相册"),
         "homeSavedSnackBarText": MessageLookupByLibrary.simpleMessage("已保存！"),
-        "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon 生成器")
+        "homeSettingsButtonText": MessageLookupByLibrary.simpleMessage("设置"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Identicon 生成器"),
+        "settingsBackgroundColorLabel":
+            MessageLookupByLibrary.simpleMessage("背景色"),
+        "settingsColorBlueLabel": m0,
+        "settingsColorGreenLabel": m1,
+        "settingsColorHashLabel": MessageLookupByLibrary.simpleMessage("#"),
+        "settingsColorHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的颜色"),
+        "settingsColorRedLabel": m2,
+        "settingsColorWarning":
+            MessageLookupByLibrary.simpleMessage("填充色和背景色不能太过相似（或是相同）以便于区分。"),
+        "settingsGridTypeDescription": m3,
+        "settingsGridTypeHelper":
+            MessageLookupByLibrary.simpleMessage("生成 Identicon 的网格类型"),
+        "settingsHashFunctionHelper":
+            MessageLookupByLibrary.simpleMessage("生成 Identicon 的哈希算法"),
+        "settingsMarginDescription": m4,
+        "settingsMarginHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的边框占比"),
+        "settingsPixelColorLabel": MessageLookupByLibrary.simpleMessage("填充色"),
+        "settingsRandomColorsLabel":
+            MessageLookupByLibrary.simpleMessage("使用随机颜色？"),
+        "settingsSizeDescription": m5,
+        "settingsSizeHelper":
+            MessageLookupByLibrary.simpleMessage("生成的 Identicon 的大小"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("设置")
       };
 }

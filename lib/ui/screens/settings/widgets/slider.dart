@@ -1,4 +1,4 @@
-part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
+part of 'package:identicon_generator/ui/screens/settings/settings_screen.dart';
 
 class _Slider extends StatefulWidget {
   const _Slider({
@@ -75,10 +75,10 @@ class _GridTypeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
-          title: S.current.advancedGridTypeHelper,
+          title: S.current.settingsGridTypeHelper,
           value: state.gridType.toDouble(),
           description:
-              S.current.advancedGridTypeDescription(state.gridType.toDouble()),
+              S.current.settingsGridTypeDescription(state.gridType.toDouble()),
           min: IconState.minGridType.toDouble(),
           max: IconState.maxGridType.toDouble(),
           onChange: (value) {
@@ -96,9 +96,9 @@ class _IconSizeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
-          title: S.current.advancedSizeHelper,
+          title: S.current.settingsSizeHelper,
           value: state.size,
-          description: S.current.advancedSizeDescription(state.size),
+          description: S.current.settingsSizeDescription(state.size),
           min: IconState.minSize,
           max: IconState.maxSize,
           onChange: (value) {
@@ -118,9 +118,9 @@ class _MarginRatioSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BlocBuilder<IconBloc, IconState>(
         builder: (context, state) => _Slider(
-          title: S.current.advancedMarginHelper,
+          title: S.current.settingsMarginHelper,
           value: state.marginRatio,
-          description: S.current.advancedMarginDescription(state.marginRatio),
+          description: S.current.settingsMarginDescription(state.marginRatio),
           min: IconState.minMarginRatio,
           max: IconState.maxMarginRatio,
           onChange: (value) {

@@ -1,4 +1,4 @@
-part of 'package:identicon_generator/ui/screens/advanced/advanced_screen.dart';
+part of 'package:identicon_generator/ui/screens/settings/settings_screen.dart';
 
 class _SingleColorPicker extends StatefulWidget {
   const _SingleColorPicker({
@@ -153,7 +153,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                                     prefixIcon: Padding(
                                       padding: const EdgeInsets.only(left: 4.0),
                                       child: Text(
-                                        S.current.advancedColorHashLabel,
+                                        S.current.settingsColorHashLabel,
                                         style: TextStylez.regular16.copyWith(
                                             color: Colorz.lightYellow),
                                       ),
@@ -183,7 +183,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                           ),
                           _colorSlider(
                             value: widget.red,
-                            label: S.current.advancedColorRedLabel(widget.red),
+                            label: S.current.settingsColorRedLabel(widget.red),
                             onChange: (value) {
                               widget.onChange?.call(Color.fromARGB(
                                 255,
@@ -197,7 +197,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                           _colorSlider(
                             value: widget.green,
                             label:
-                                S.current.advancedColorGreenLabel(widget.green),
+                                S.current.settingsColorGreenLabel(widget.green),
                             onChange: (value) {
                               widget.onChange?.call(Color.fromARGB(
                                 255,
@@ -211,7 +211,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                           _colorSlider(
                             value: widget.blue,
                             label:
-                                S.current.advancedColorBlueLabel(widget.blue),
+                                S.current.settingsColorBlueLabel(widget.blue),
                             onChange: (value) {
                               widget.onChange?.call(Color.fromARGB(
                                 255,
@@ -233,7 +233,7 @@ class _SingleColorPickerState extends State<_SingleColorPicker> {
                               const SizedBox(width: 8.0),
                               Expanded(
                                 child: Text(
-                                  S.current.advancedColorWarning,
+                                  S.current.settingsColorWarning,
                                   style: TextStylez.regular14
                                       .copyWith(color: Colorz.indianRed),
                                 ),
@@ -311,7 +311,7 @@ class _ColorPicker extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              S.current.advancedColorHelper,
+              S.current.settingsColorHelper,
               style: TextStylez.regular12.copyWith(color: Colorz.darkGray),
             ),
             const SizedBox(height: 8.0),
@@ -335,7 +335,7 @@ class _ColorPicker extends StatelessWidget {
                   ),
                   const SizedBox(width: 8.0),
                   Text(
-                    S.current.advancedRandomColorsLabel,
+                    S.current.settingsRandomColorsLabel,
                     style: TextStylez.regular16,
                   ),
                 ],
@@ -348,7 +348,7 @@ class _ColorPicker extends StatelessWidget {
                 children: [
                   _SingleColorPicker(
                     value: state.colors.pixelColor,
-                    label: S.current.advancedPixelColorLabel,
+                    label: S.current.settingsPixelColorLabel,
                     onChange: (color) {
                       context.read<IconBloc>().add(IconColorChanged(
                             useRandomColors: state.useRandomColors,
@@ -358,7 +358,7 @@ class _ColorPicker extends StatelessWidget {
                   ),
                   _SingleColorPicker(
                     value: state.colors.backgroundColor,
-                    label: S.current.advancedBackgroundColorLabel,
+                    label: S.current.settingsBackgroundColorLabel,
                     onChange: (color) {
                       context.read<IconBloc>().add(IconColorChanged(
                             useRandomColors: state.useRandomColors,

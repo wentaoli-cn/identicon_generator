@@ -1,7 +1,7 @@
 part of 'package:identicon_generator/ui/screens/home/home_screen.dart';
 
-class _AdvancedButton extends StatelessWidget {
-  const _AdvancedButton();
+class _SettingsButton extends StatelessWidget {
+  const _SettingsButton();
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class _AdvancedButton extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            context.push(Routez.advanced.path);
+            context.push(Routez.settings.path);
           },
           behavior: HitTestBehavior.translucent,
           child: Row(
@@ -23,7 +23,7 @@ class _AdvancedButton extends StatelessWidget {
               ),
               const SizedBox(width: 8.0),
               Text(
-                S.current.homeAdvancedButtonText,
+                S.current.homeSettingsButtonText,
                 style: TextStylez.regular16,
               ),
             ],
